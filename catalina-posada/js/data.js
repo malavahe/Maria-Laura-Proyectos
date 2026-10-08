@@ -242,6 +242,15 @@ window.CP_DATA = {
       mosaico: "img/telas/doble-tela-tile.jpg",
       paleta: ["#e5876a", "#f1ece2"]
     },
+    {
+      id: "calado",
+      nombre: "Calado",
+      familia: "rayas-cuadros",
+      pieza: "img/telas/calado-pieza.webp",
+      foto: "img/telas/calado.jpg",
+      mosaico: "img/telas/calado-tile.jpg",
+      paleta: ["#a3122f", "#f3efe6"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
