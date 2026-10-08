@@ -82,7 +82,7 @@ window.CP_DATA = {
     },
     {
       id: "tafetan-algodon-bambu",
-      nombre: "Tafetán con algodón y bambú",
+      nombre: "Tafetán con algodón y bambú, menta",
       familia: "rayas-cuadros",
       pieza: "img/telas/tafetan-algodon-bambu-pieza.jpg",
       foto: "img/telas/tafetan-algodon-bambu.jpg",
@@ -91,7 +91,7 @@ window.CP_DATA = {
     },
     {
       id: "tafetan-bambu-algodon",
-      nombre: "Tafetán con bambú y algodón",
+      nombre: "Tafetán con bambú y algodón, rayas cielo",
       familia: "rayas-cuadros",
       pieza: "img/telas/tafetan-bambu-algodon-pieza.jpg",
       foto: "img/telas/tafetan-bambu-algodon.jpg",
