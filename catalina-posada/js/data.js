@@ -215,6 +215,15 @@ window.CP_DATA = {
       mosaico: "img/telas/telar-de-cintura-tile.jpg",
       paleta: ["#e3e98a", "#e4e0d8"]
     },
+    {
+      id: "brocado-rombo",
+      nombre: "Brocado rombo",
+      familia: "texturas",
+      pieza: "img/telas/brocado-rombo-pieza.webp",
+      foto: "img/telas/brocado-rombo.jpg",
+      mosaico: "img/telas/brocado-rombo-tile.jpg",
+      paleta: ["#b8183a", "#f2ece4", "#6e1a12"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
