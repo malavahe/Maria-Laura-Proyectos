@@ -116,6 +116,15 @@ window.CP_DATA = {
       mosaico: "img/telas/tafetan-lana-tile.jpg",
       paleta: ["#c08a4a", "#a8733a", "#efebe3"]
     },
+    {
+      id: "sarga-zigzag",
+      nombre: "Sarga zigzag",
+      familia: "texturas",
+      pieza: "img/telas/sarga-zigzag-pieza.jpg",
+      foto: "img/telas/sarga-zigzag.jpg",
+      mosaico: "img/telas/sarga-zigzag-tile.jpg",
+      paleta: ["#1f8a3c", "#8dbf63", "#e6e3df"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
