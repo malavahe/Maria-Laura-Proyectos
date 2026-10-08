@@ -278,6 +278,15 @@ window.CP_DATA = {
       mosaico: "img/telas/sarga-ondulada-tile.jpg",
       paleta: ["#1f9a55", "#e3dc98", "#e79a86"]
     },
+    {
+      id: "espina-de-pescado",
+      nombre: "Espina de pescado",
+      familia: "texturas",
+      pieza: "img/telas/espina-de-pescado-pieza.webp",
+      foto: "img/telas/espina-de-pescado.jpg",
+      mosaico: "img/telas/espina-de-pescado-tile.jpg",
+      paleta: ["#2a6fb0", "#1f9a55", "#b8a6d9", "#f1ede4"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
