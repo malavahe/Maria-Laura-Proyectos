@@ -233,6 +233,15 @@ window.CP_DATA = {
       mosaico: "img/telas/brocado-doble-tile.jpg",
       paleta: ["#a3172f", "#c8b98a", "#86a9dc", "#f1ece2"]
     },
+    {
+      id: "doble-tela",
+      nombre: "Doble tela",
+      familia: "lisas",
+      pieza: "img/telas/doble-tela-pieza.webp",
+      foto: "img/telas/doble-tela.jpg",
+      mosaico: "img/telas/doble-tela-tile.jpg",
+      paleta: ["#e5876a", "#f1ece2"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
