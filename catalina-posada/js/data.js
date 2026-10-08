@@ -224,6 +224,15 @@ window.CP_DATA = {
       mosaico: "img/telas/brocado-rombo-tile.jpg",
       paleta: ["#b8183a", "#f2ece4", "#6e1a12"]
     },
+    {
+      id: "brocado-doble",
+      nombre: "Brocado doble",
+      familia: "texturas",
+      pieza: "img/telas/brocado-doble-pieza.webp",
+      foto: "img/telas/brocado-doble.jpg",
+      mosaico: "img/telas/brocado-doble-tile.jpg",
+      paleta: ["#a3172f", "#c8b98a", "#86a9dc", "#f1ece2"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
