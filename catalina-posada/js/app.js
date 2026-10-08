@@ -50,31 +50,19 @@
     filtros.appendChild(b);
   });
 
-  // Inclinación 3D que sigue al cursor
-  function inclinar(zona) {
-    zona.addEventListener("pointermove", function (e) {
-      var r = zona.getBoundingClientRect();
-      zona.style.setProperty("--ry", (((e.clientX - r.left) / r.width - 0.5) * 16).toFixed(1) + "deg");
-      zona.style.setProperty("--rx", (((e.clientY - r.top) / r.height - 0.5) * -12 + 8).toFixed(1) + "deg");
-    });
-    zona.addEventListener("pointerleave", function () {
-      zona.style.removeProperty("--rx");
-      zona.style.removeProperty("--ry");
-    });
-  }
-
   var grid = $("#grid-telas");
   D.telas.forEach(function (t) {
     var muestra = el("span");
     fondo(muestra, t);
     var capas = [muestra];
-    // Con foto general: la pieza recortada, flotando en volumen; al pasar el
-    // cursor se inclina con el movimiento y deja ver el detalle detrás.
+    // Con foto general: se ve la pieza completa y al pasar el cursor, el detalle.
     if (t.pieza) {
-      capas.push(el("img", { class: "tela-pieza", src: t.pieza, alt: "", loading: "lazy", decoding: "async" }));
+      var pieza = el("span", { class: "tela-pieza" });
+      pieza.style.backgroundImage = "url(" + t.pieza + ")";
+      capas.push(pieza);
     }
     var card = el("button", { type: "button", class: "tela-card", "aria-label": "Ver ficha de " + t.nombre }, [
-      el("div", { class: "tela-muestra" + (t.pieza ? " con-pieza" : "") }, capas),
+      el("div", { class: "tela-muestra" }, capas),
       el("div", { class: "tela-info" }, [
         el("span", { class: "tela-nombre", text: t.nombre }),
         el("span", { class: "tela-ref", text: t.ref || "" })
@@ -82,7 +70,6 @@
       el("div", { class: "tela-ligamento", text: t.ligamento || "" })
     ]);
     card.addEventListener("click", function () { abrirFicha(t); });
-    if (t.pieza) inclinar(card.querySelector(".tela-muestra"));
     var li = el("li", { class: "revelar" }, [card]);
     li.dataset.familia = t.familia;
     grid.appendChild(li);
@@ -90,7 +77,6 @@
 
   /* ---------- Ficha de tela ---------- */
   var ficha = $("#ficha");
-  inclinar($("#ficha-tela"));
   var fichaTela = null;
 
   function abrirFicha(t) {
@@ -101,10 +87,10 @@
     vistas.hidden = !t.pieza;
     function mostrar(cual) {
       vista.removeAttribute("style");
-      vista.innerHTML = "";
-      vista.classList.toggle("con-pieza", cual === "pieza");
       if (cual === "pieza") {
-        vista.appendChild(el("img", { class: "ficha-pieza", src: t.pieza, alt: t.nombre + ", pieza completa" }));
+        vista.style.backgroundImage = "url(" + t.pieza + ")";
+        vista.style.backgroundSize = "cover";
+        vista.style.backgroundPosition = "center";
       } else {
         fondo(vista, t);
       }
