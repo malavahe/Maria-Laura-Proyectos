@@ -107,6 +107,15 @@ window.CP_DATA = {
       mosaico: "img/telas/tafetan-algodon-tile.jpg",
       paleta: ["#5fae55", "#b39a73", "#eef0ea"]
     },
+    {
+      id: "tafetan-lana",
+      nombre: "Tafetán lana",
+      familia: "lisas",
+      pieza: "img/telas/tafetan-lana-pieza.jpg",
+      foto: "img/telas/tafetan-lana.jpg",
+      mosaico: "img/telas/tafetan-lana-tile.jpg",
+      paleta: ["#c08a4a", "#a8733a", "#efebe3"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
