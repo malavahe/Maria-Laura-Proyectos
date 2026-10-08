@@ -1,8 +1,7 @@
 (function () {
   var D = window.CP_DATA;
   var PRENDAS = window.CP_PRENDAS;
-  var textura = window.CP_texturaDe;
-  var $ = function (sel) { return document.querySelector(sel); };
+    var $ = function (sel) { return document.querySelector(sel); };
 
   var estado = { prenda: D.prendas[0].id, tela: D.telas[0].id, familia: "todas" };
 
@@ -10,8 +9,16 @@
     return D.telas.find(function (t) { return t.id === id; });
   }
 
-  function fondo(el, tela) {
-    el.style.backgroundImage = "url(" + textura(tela) + ")";
+  // Con foto real: la foto completa, recortada al recuadro.
+  // Con textura de muestra (o en la portada): repetida en mosaico.
+  function fondo(el, tela, mosaico) {
+    if (tela.foto && !mosaico) {
+      el.style.backgroundImage = "url(" + tela.foto + ")";
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "center";
+    } else {
+      el.style.backgroundImage = "url(" + window.CP_mosaicoDe(tela) + ")";
+    }
   }
 
   function el(tag, attrs, hijos) {
@@ -26,7 +33,7 @@
   }
 
   /* ---------- Portada ---------- */
-  fondo($(".hero-tela"), telaPorId(D.portada) || D.telas[0]);
+  fondo($(".hero-tela"), telaPorId(D.portada) || D.telas[0], true);
   if (D.muestra) $("#aviso-muestra").hidden = false;
 
   /* ---------- Archivo textil ---------- */
@@ -51,9 +58,9 @@
       el("div", { class: "tela-muestra" }, [muestra]),
       el("div", { class: "tela-info" }, [
         el("span", { class: "tela-nombre", text: t.nombre }),
-        el("span", { class: "tela-ref", text: t.ref })
+        el("span", { class: "tela-ref", text: t.ref || "" })
       ]),
-      el("div", { class: "tela-ligamento", text: t.ligamento })
+      el("div", { class: "tela-ligamento", text: t.ligamento || "" })
     ]);
     card.addEventListener("click", function () { abrirFicha(t); });
     var li = el("li", { class: "revelar" }, [card]);
@@ -68,18 +75,18 @@
   function abrirFicha(t) {
     fichaTela = t;
     fondo($("#ficha-tela"), t);
-    $("#ficha-ref").textContent = t.ref;
+    $("#ficha-ref").textContent = t.ref || "Archivo Textil";
     $("#ficha-nombre").textContent = t.nombre;
     var dl = $("#ficha-lista");
     dl.innerHTML = "";
-    var colores = t.tejido.urdimbre.concat(t.tejido.trama).filter(function (c, i, a) { return a.indexOf(c) === i; });
+    var colores = t.paleta || t.tejido.urdimbre.concat(t.tejido.trama).filter(function (c, i, a) { return a.indexOf(c) === i; });
     var paleta = el("div", { class: "paleta" }, colores.map(function (c) {
       var i = el("i"); i.style.background = c; return i;
     }));
-    [["Ligamento", t.ligamento], ["Composición", t.composicion], ["Ancho", t.ancho]].forEach(function (par) {
-      dl.appendChild(el("dt", { text: par[0] }));
-      dl.appendChild(el("dd", { text: par[1] }));
-    });
+    if (t.ligamento) {
+      dl.appendChild(el("dt", { text: "Técnica" }));
+      dl.appendChild(el("dd", { text: t.ligamento }));
+    }
     dl.appendChild(el("dt", { text: "Paleta" }));
     dl.appendChild(el("dd", {}, [paleta]));
     ficha.showModal();
@@ -126,7 +133,7 @@
   var uid = 0;
   function svgPrenda(forma, tela) {
     var n = ++uid;
-    var S = tela.foto ? 180 : 110;
+    var S = tela.mosaico ? 340 : tela.foto ? 180 : 110;
     var NS = "http://www.w3.org/2000/svg";
     var trazos = function (lista, attrs) {
       return lista.map(function (d) { return '<path d="' + d + '" ' + attrs + "/>"; }).join("");
@@ -146,7 +153,7 @@
       '<svg xmlns="' + NS + '" viewBox="0 0 400 520" role="img" aria-label="' + tela.nombre + '">' +
       "<defs>" +
       '<pattern id="p' + n + '" patternUnits="userSpaceOnUse" width="' + S + '" height="' + S + '">' +
-      '<image href="' + textura(tela) + '" width="' + S + '" height="' + S + '" preserveAspectRatio="xMidYMid slice"/></pattern>' +
+      '<image href="' + window.CP_mosaicoDe(tela) + '" width="' + S + '" height="' + S + '" preserveAspectRatio="xMidYMid slice"/></pattern>' +
       '<clipPath id="c' + n + '"><path d="' + forma.silueta + '"/></clipPath>' +
       '<linearGradient id="h' + n + '" x1="0" x2="1">' +
       '<stop offset="0" stop-color="#000" stop-opacity=".32"/><stop offset=".3" stop-color="#000" stop-opacity="0"/>' +
@@ -207,7 +214,7 @@
   var gp = $("#grid-propuestas");
   D.propuestas.forEach(function (p) {
     var banda = el("div", { class: "propuesta-banda" }, D.telas.map(function (t) {
-      var s = el("span"); fondo(s, t); return s;
+      var s = el("span"); fondo(s, t, true); return s;
     }));
     gp.appendChild(el("article", { class: "propuesta revelar" }, [
       banda,

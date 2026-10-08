@@ -5,6 +5,10 @@
  * TELAS
  *   foto:    ruta a la foto real de la tela (img/telas/...). Si está vacía,
  *            la web genera una textura de muestra a partir de "tejido".
+ *   mosaico: versión repetible (cuadrada, en espejo) de la foto, para
+ *            rellenar las prendas del showroom sin cortes visibles.
+ *   ligamento: técnica. Opcional; si está vacía no se muestra.
+ *   paleta:  colores principales de la tela, para la ficha.
  *   tejido:  textura de muestra mientras no haya foto.
  *            tipo: liso | sarga | espiga | rayas | cuadros | pata | boucle
  *
@@ -17,17 +21,26 @@
 
 window.CP_DATA = {
   muestra: true, // muestra el aviso de "telas de muestra" mientras sea true
-  portada: "paramo", // tela que se ve en la portada
+  portada: "cinturon-de-monje", // tela que se ve en la portada
 
   telas: [
+    // Telas reales
+    {
+      id: "cinturon-de-monje",
+      nombre: "Cinturón de monje",
+      familia: "rayas-cuadros",
+      foto: "img/telas/cinturon-de-monje.jpg",
+      mosaico: "img/telas/cinturon-de-monje-tile.jpg",
+      paleta: ["#7a1f55", "#1fae4c", "#c9b5d4"]
+    },
+
+    // Telas de muestra: se van reemplazando por las reales
     {
       id: "arena",
       nombre: "Arena",
       ref: "CP-001",
       familia: "lisas",
       ligamento: "Tafetán",
-      composicion: "Por confirmar",
-      ancho: "Por confirmar",
       foto: "",
       tejido: { tipo: "liso", urdimbre: ["#d9c9ad"], trama: ["#c4b08f"] }
     },
@@ -37,8 +50,6 @@ window.CP_DATA = {
       ref: "CP-002",
       familia: "texturas",
       ligamento: "Espiga",
-      composicion: "Por confirmar",
-      ancho: "Por confirmar",
       foto: "",
       tejido: { tipo: "espiga", urdimbre: ["#2c3743"], trama: ["#56636f"] }
     },
@@ -48,8 +59,6 @@ window.CP_DATA = {
       ref: "CP-003",
       familia: "rayas-cuadros",
       ligamento: "Tafetán a rayas",
-      composicion: "Por confirmar",
-      ancho: "Por confirmar",
       foto: "",
       tejido: {
         tipo: "rayas",
@@ -63,8 +72,6 @@ window.CP_DATA = {
       ref: "CP-004",
       familia: "rayas-cuadros",
       ligamento: "Sarga a cuadros",
-      composicion: "Por confirmar",
-      ancho: "Por confirmar",
       foto: "",
       tejido: {
         tipo: "cuadros",
@@ -78,8 +85,6 @@ window.CP_DATA = {
       ref: "CP-005",
       familia: "rayas-cuadros",
       ligamento: "Pata de gallo",
-      composicion: "Por confirmar",
-      ancho: "Por confirmar",
       foto: "",
       tejido: { tipo: "pata", urdimbre: ["#1f1d1b", "#ebe4d6"], trama: ["#1f1d1b", "#ebe4d6"] }
     },
@@ -89,8 +94,6 @@ window.CP_DATA = {
       ref: "CP-006",
       familia: "texturas",
       ligamento: "Bouclé",
-      composicion: "Por confirmar",
-      ancho: "Por confirmar",
       foto: "",
       tejido: { tipo: "boucle", urdimbre: ["#eee8dc"], trama: ["#ddd2bf"] }
     }

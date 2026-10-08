@@ -105,8 +105,9 @@
     return cache[key];
   }
 
-  // Devuelve la imagen a usar para una tela: su foto o la textura de muestra.
-  window.CP_texturaDe = function (tela) {
-    return tela.foto ? tela.foto : generar(tela.tejido);
+  // Imagen repetible para rellenar prendas y fondos: el mosaico preparado
+  // a partir de la foto real, la foto sola o, si no hay, la textura de muestra.
+  window.CP_mosaicoDe = function (tela) {
+    return tela.mosaico || tela.foto || generar(tela.tejido);
   };
 })();
