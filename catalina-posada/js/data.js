@@ -62,6 +62,15 @@ window.CP_DATA = {
       mosaico: "img/telas/estrella-tile.jpg",
       paleta: ["#3e3730", "#d9d3e6", "#b9a6dc"]
     },
+    {
+      id: "tafetan",
+      nombre: "Tafetán",
+      familia: "lisas",
+      pieza: "img/telas/tafetan-pieza.jpg",
+      foto: "img/telas/tafetan.jpg",
+      mosaico: "img/telas/tafetan-tile.jpg",
+      paleta: ["#e2bd2c", "#3a3a32", "#ece8e2"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
