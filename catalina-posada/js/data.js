@@ -206,6 +206,15 @@ window.CP_DATA = {
       mosaico: "img/telas/non-tile.jpg",
       paleta: ["#e6e1d6", "#b9dc9c"]
     },
+    {
+      id: "telar-de-cintura",
+      nombre: "Telar de cintura",
+      familia: "texturas",
+      pieza: "img/telas/telar-de-cintura-pieza.webp",
+      foto: "img/telas/telar-de-cintura.jpg",
+      mosaico: "img/telas/telar-de-cintura-tile.jpg",
+      paleta: ["#e3e98a", "#e4e0d8"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
