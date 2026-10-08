@@ -130,6 +130,9 @@ button { font: inherit; color: inherit; }
   transition: transform .9s var(--ease);
 }
 .tela-card:hover .tela-muestra span, .tela-card:focus-visible .tela-muestra span { transform: scale(1.12); }
+.tela-muestra .tela-pieza { background-size: cover; background-position: center; transition: opacity .6s var(--ease), transform .9s var(--ease); }
+.tela-card:hover .tela-pieza, .tela-card:focus-visible .tela-pieza { opacity: 0; }
+@media (hover: none) { .tela-card:hover .tela-pieza { opacity: 1; } }
 .tela-info { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; gap: 8px; }
 .tela-nombre { font: 400 22px/1.1 var(--serif); }
 .tela-ref { font-size: 11px; letter-spacing: .14em; color: var(--tinta-2); }
@@ -201,7 +204,12 @@ button { font: inherit; color: inherit; }
 }
 .ficha[open] { display: grid; animation: aparecer .4s var(--ease); }
 .ficha::backdrop { background: rgba(29, 27, 25, .55); backdrop-filter: blur(3px); }
-.ficha-tela { min-height: 360px; background-size: 160px; }
+.ficha-visor { position: relative; display: flex; }
+.ficha-tela { flex: 1; min-height: 480px; background-size: 160px; }
+.ficha-vistas { position: absolute; left: 16px; bottom: 16px; display: flex; gap: 8px; }
+.ficha-vistas[hidden] { display: none; }
+.ficha-vistas .chip { background: rgba(246, 243, 238, .92); border-color: transparent; }
+.ficha-vistas .chip[aria-pressed="true"] { background: var(--tinta); color: var(--papel); }
 .ficha-datos { padding: 40px 36px; display: flex; flex-direction: column; }
 .ficha h3 { font: 300 44px/1 var(--serif); margin: 0 0 24px; }
 .ficha dl { margin: 0 0 32px; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; font-size: 14px; }
@@ -241,7 +249,7 @@ button { font: inherit; color: inherit; }
   .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 32px; }
   .hero-tela { aspect-ratio: 16 / 10; order: -1; }
   .ficha { grid-template-columns: 1fr; }
-  .ficha-tela { min-height: 200px; }
+  .ficha-tela { min-height: 320px; }
   .ficha-datos { padding: 28px 24px; }
   .muestrario { grid-template-columns: repeat(3, 1fr); }
   .grid-telas { grid-template-columns: repeat(2, 1fr); gap: 28px 14px; }

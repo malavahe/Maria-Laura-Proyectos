@@ -3,8 +3,9 @@
  * solo hay que editar este archivo.
  *
  * TELAS
- *   foto:    ruta a la foto real de la tela (img/telas/...). Si está vacía,
- *            la web genera una textura de muestra a partir de "tejido".
+ *   pieza:   foto general de la muestra completa (opcional).
+ *   foto:    foto de cerca, donde se ve la textura (img/telas/...). Si está
+ *            vacía, la web genera una textura de muestra a partir de "tejido".
  *   mosaico: versión repetible (cuadrada, en espejo) de la foto, para
  *            rellenar las prendas del showroom sin cortes visibles.
  *   ligamento: técnica. Opcional; si está vacía no se muestra.
@@ -29,6 +30,7 @@ window.CP_DATA = {
       id: "cinturon-de-monje",
       nombre: "Cinturón de monje",
       familia: "rayas-cuadros",
+      pieza: "img/telas/cinturon-de-monje-pieza.jpg",
       foto: "img/telas/cinturon-de-monje.jpg",
       mosaico: "img/telas/cinturon-de-monje-tile.jpg",
       paleta: ["#7a1f55", "#1fae4c", "#c9b5d4"]

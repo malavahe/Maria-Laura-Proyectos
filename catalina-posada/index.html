@@ -90,7 +90,10 @@
 
   <dialog class="ficha" id="ficha" aria-labelledby="ficha-nombre">
     <button class="ficha-cerrar" type="button" aria-label="Cerrar">&times;</button>
-    <div class="ficha-tela" id="ficha-tela"></div>
+    <div class="ficha-visor">
+      <div class="ficha-tela" id="ficha-tela"></div>
+      <div class="ficha-vistas" id="ficha-vistas" role="group" aria-label="Vista de la tela" hidden></div>
+    </div>
     <div class="ficha-datos">
       <p class="eyebrow" id="ficha-ref"></p>
       <h3 id="ficha-nombre"></h3>

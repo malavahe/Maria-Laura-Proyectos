@@ -54,8 +54,15 @@
   D.telas.forEach(function (t) {
     var muestra = el("span");
     fondo(muestra, t);
+    var capas = [muestra];
+    // Con foto general: se ve la pieza completa y al pasar el cursor, el detalle.
+    if (t.pieza) {
+      var pieza = el("span", { class: "tela-pieza" });
+      pieza.style.backgroundImage = "url(" + t.pieza + ")";
+      capas.push(pieza);
+    }
     var card = el("button", { type: "button", class: "tela-card", "aria-label": "Ver ficha de " + t.nombre }, [
-      el("div", { class: "tela-muestra" }, [muestra]),
+      el("div", { class: "tela-muestra" }, capas),
       el("div", { class: "tela-info" }, [
         el("span", { class: "tela-nombre", text: t.nombre }),
         el("span", { class: "tela-ref", text: t.ref || "" })
@@ -74,7 +81,32 @@
 
   function abrirFicha(t) {
     fichaTela = t;
-    fondo($("#ficha-tela"), t);
+    var vista = $("#ficha-tela");
+    var vistas = $("#ficha-vistas");
+    vistas.innerHTML = "";
+    vistas.hidden = !t.pieza;
+    function mostrar(cual) {
+      vista.removeAttribute("style");
+      if (cual === "pieza") {
+        vista.style.backgroundImage = "url(" + t.pieza + ")";
+        vista.style.backgroundSize = "cover";
+        vista.style.backgroundPosition = "center";
+      } else {
+        fondo(vista, t);
+      }
+      vistas.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.dataset.vista === cual));
+      });
+    }
+    if (t.pieza) {
+      [["pieza", "Pieza completa"], ["detalle", "Detalle"]].forEach(function (v) {
+        var b = el("button", { type: "button", class: "chip", text: v[1] });
+        b.dataset.vista = v[0];
+        b.addEventListener("click", function () { mostrar(v[0]); });
+        vistas.appendChild(b);
+      });
+    }
+    mostrar(t.pieza ? "pieza" : "detalle");
     $("#ficha-ref").textContent = t.ref || "Archivo Textil";
     $("#ficha-nombre").textContent = t.nombre;
     var dl = $("#ficha-lista");
