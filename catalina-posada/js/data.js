@@ -158,7 +158,7 @@ window.CP_DATA = {
       familia: "texturas",
       pieza: "img/telas/sprang-calado-pieza.jpg",
       foto: "img/telas/sprang-calado.jpg",
-      mosaico: "img/telas/sprang-calado-tile.jpg",
+      mosaico: "img/telas/sprang-calado-tile.png",
       paleta: ["#1f6f78", "#2c8590"]
     },
 
