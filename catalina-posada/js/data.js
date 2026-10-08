@@ -143,6 +143,15 @@ window.CP_DATA = {
       mosaico: "img/telas/sarga-tafetan-tile.jpg",
       paleta: ["#d4ac1f", "#ebe6d9"]
     },
+    {
+      id: "sprang",
+      nombre: "Sprang",
+      familia: "texturas",
+      pieza: "img/telas/sprang-pieza.jpg",
+      foto: "img/telas/sprang.jpg",
+      mosaico: "img/telas/sprang-tile.jpg",
+      paleta: ["#d9a640", "#c79a55"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
