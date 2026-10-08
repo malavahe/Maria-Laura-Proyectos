@@ -152,6 +152,15 @@ window.CP_DATA = {
       mosaico: "img/telas/sprang-tile.jpg",
       paleta: ["#d9a640", "#c79a55"]
     },
+    {
+      id: "sprang-calado",
+      nombre: "Sprang calado",
+      familia: "texturas",
+      pieza: "img/telas/sprang-calado-pieza.jpg",
+      foto: "img/telas/sprang-calado.jpg",
+      mosaico: "img/telas/sprang-calado-tile.jpg",
+      paleta: ["#1f6f78", "#2c8590"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
