@@ -197,6 +197,15 @@ window.CP_DATA = {
       mosaico: "img/telas/brocado-tile.jpg",
       paleta: ["#e9ec8f", "#efeadc", "#a8642c"]
     },
+    {
+      id: "non",
+      nombre: "Non",
+      familia: "texturas",
+      pieza: "img/telas/non-pieza.webp",
+      foto: "img/telas/non.jpg",
+      mosaico: "img/telas/non-tile.jpg",
+      paleta: ["#e6e1d6", "#b9dc9c"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
