@@ -251,6 +251,15 @@ window.CP_DATA = {
       mosaico: "img/telas/calado-tile.jpg",
       paleta: ["#a3122f", "#f3efe6"]
     },
+    {
+      id: "sarga",
+      nombre: "Sarga",
+      familia: "rayas-cuadros",
+      pieza: "img/telas/sarga-pieza.webp",
+      foto: "img/telas/sarga.jpg",
+      mosaico: "img/telas/sarga-tile.jpg",
+      paleta: ["#d8cdb4", "#6bb85a", "#6e1a1a", "#b39a76"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
