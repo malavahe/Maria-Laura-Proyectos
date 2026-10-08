@@ -30,7 +30,7 @@ window.CP_DATA = {
       id: "cinturon-de-monje",
       nombre: "Cinturón de monje",
       familia: "rayas-cuadros",
-      pieza: "img/telas/cinturon-de-monje-pieza.jpg",
+      pieza: "img/telas/cinturon-de-monje-pieza.webp",
       foto: "img/telas/cinturon-de-monje.jpg",
       mosaico: "img/telas/cinturon-de-monje-tile.jpg",
       paleta: ["#7a1f55", "#1fae4c", "#c9b5d4"]
@@ -39,7 +39,7 @@ window.CP_DATA = {
       id: "overshoot",
       nombre: "Overshoot",
       familia: "texturas",
-      pieza: "img/telas/overshoot-pieza.jpg",
+      pieza: "img/telas/overshoot-pieza.webp",
       foto: "img/telas/overshoot.jpg",
       mosaico: "img/telas/overshoot-tile.jpg",
       paleta: ["#c9b21e", "#6c6aa8", "#b9a9d6"]
@@ -48,7 +48,7 @@ window.CP_DATA = {
       id: "overshoot-rombo-sol",
       nombre: "Overshoot rombo sol",
       familia: "texturas",
-      pieza: "img/telas/overshoot-rombo-sol-pieza.jpg",
+      pieza: "img/telas/overshoot-rombo-sol-pieza.webp",
       foto: "img/telas/overshoot-rombo-sol.jpg",
       mosaico: "img/telas/overshoot-rombo-sol-tile.jpg",
       paleta: ["#8a2f6a", "#5a2448", "#e6dcea", "#b9a9d6"]
@@ -57,7 +57,7 @@ window.CP_DATA = {
       id: "estrella",
       nombre: "Estrella",
       familia: "texturas",
-      pieza: "img/telas/estrella-pieza.jpg",
+      pieza: "img/telas/estrella-pieza.webp",
       foto: "img/telas/estrella.jpg",
       mosaico: "img/telas/estrella-tile.jpg",
       paleta: ["#3e3730", "#d9d3e6", "#b9a6dc"]
@@ -66,7 +66,7 @@ window.CP_DATA = {
       id: "tafetan",
       nombre: "Tafetán",
       familia: "lisas",
-      pieza: "img/telas/tafetan-pieza.jpg",
+      pieza: "img/telas/tafetan-pieza.webp",
       foto: "img/telas/tafetan.jpg",
       mosaico: "img/telas/tafetan-tile.jpg",
       paleta: ["#e2bd2c", "#3a3a32", "#ece8e2"]
@@ -75,7 +75,7 @@ window.CP_DATA = {
       id: "tafetan-fique-lana",
       nombre: "Tafetán con fique y lana",
       familia: "texturas",
-      pieza: "img/telas/tafetan-fique-lana-pieza.jpg",
+      pieza: "img/telas/tafetan-fique-lana-pieza.webp",
       foto: "img/telas/tafetan-fique-lana.jpg",
       mosaico: "img/telas/tafetan-fique-lana-tile.jpg",
       paleta: ["#2b2a28", "#ece9e2", "#cdb98f"]
@@ -84,7 +84,7 @@ window.CP_DATA = {
       id: "tafetan-algodon-bambu",
       nombre: "Tafetán con algodón y bambú, menta",
       familia: "rayas-cuadros",
-      pieza: "img/telas/tafetan-algodon-bambu-pieza.jpg",
+      pieza: "img/telas/tafetan-algodon-bambu-pieza.webp",
       foto: "img/telas/tafetan-algodon-bambu.jpg",
       mosaico: "img/telas/tafetan-algodon-bambu-tile.jpg",
       paleta: ["#c7e3c0", "#8c7558", "#efece6"]
@@ -93,7 +93,7 @@ window.CP_DATA = {
       id: "tafetan-bambu-algodon",
       nombre: "Tafetán con bambú y algodón, rayas cielo",
       familia: "rayas-cuadros",
-      pieza: "img/telas/tafetan-bambu-algodon-pieza.jpg",
+      pieza: "img/telas/tafetan-bambu-algodon-pieza.webp",
       foto: "img/telas/tafetan-bambu-algodon.jpg",
       mosaico: "img/telas/tafetan-bambu-algodon-tile.jpg",
       paleta: ["#8fb3e0", "#6ea043", "#b8a07a", "#f1ede4"]
@@ -102,7 +102,7 @@ window.CP_DATA = {
       id: "tafetan-algodon",
       nombre: "Tafetán algodón",
       familia: "lisas",
-      pieza: "img/telas/tafetan-algodon-pieza.jpg",
+      pieza: "img/telas/tafetan-algodon-pieza.webp",
       foto: "img/telas/tafetan-algodon.jpg",
       mosaico: "img/telas/tafetan-algodon-tile.jpg",
       paleta: ["#5fae55", "#b39a73", "#eef0ea"]
@@ -111,7 +111,7 @@ window.CP_DATA = {
       id: "tafetan-lana",
       nombre: "Tafetán lana",
       familia: "lisas",
-      pieza: "img/telas/tafetan-lana-pieza.jpg",
+      pieza: "img/telas/tafetan-lana-pieza.webp",
       foto: "img/telas/tafetan-lana.jpg",
       mosaico: "img/telas/tafetan-lana-tile.jpg",
       paleta: ["#c08a4a", "#a8733a", "#efebe3"]
@@ -120,7 +120,7 @@ window.CP_DATA = {
       id: "sarga-zigzag",
       nombre: "Sarga zigzag",
       familia: "texturas",
-      pieza: "img/telas/sarga-zigzag-pieza.jpg",
+      pieza: "img/telas/sarga-zigzag-pieza.webp",
       foto: "img/telas/sarga-zigzag.jpg",
       mosaico: "img/telas/sarga-zigzag-tile.jpg",
       paleta: ["#1f8a3c", "#8dbf63", "#e6e3df"]
@@ -129,7 +129,7 @@ window.CP_DATA = {
       id: "tafetan-lana-algodon",
       nombre: "Tafetán lana algodón",
       familia: "lisas",
-      pieza: "img/telas/tafetan-lana-algodon-pieza.jpg",
+      pieza: "img/telas/tafetan-lana-algodon-pieza.webp",
       foto: "img/telas/tafetan-lana-algodon.jpg",
       mosaico: "img/telas/tafetan-lana-algodon-tile.jpg",
       paleta: ["#b07a3e", "#6f97c8", "#efece4"]
@@ -138,7 +138,7 @@ window.CP_DATA = {
       id: "sarga-tafetan",
       nombre: "Sarga tafetán",
       familia: "texturas",
-      pieza: "img/telas/sarga-tafetan-pieza.jpg",
+      pieza: "img/telas/sarga-tafetan-pieza.webp",
       foto: "img/telas/sarga-tafetan.jpg",
       mosaico: "img/telas/sarga-tafetan-tile.jpg",
       paleta: ["#d4ac1f", "#ebe6d9"]
@@ -147,7 +147,7 @@ window.CP_DATA = {
       id: "sprang",
       nombre: "Sprang",
       familia: "texturas",
-      pieza: "img/telas/sprang-pieza.jpg",
+      pieza: "img/telas/sprang-pieza.webp",
       foto: "img/telas/sprang.jpg",
       mosaico: "img/telas/sprang-tile.jpg",
       paleta: ["#d9a640", "#c79a55"]
@@ -156,7 +156,7 @@ window.CP_DATA = {
       id: "sprang-calado",
       nombre: "Sprang calado",
       familia: "texturas",
-      pieza: "img/telas/sprang-calado-pieza.jpg",
+      pieza: "img/telas/sprang-calado-pieza.webp",
       foto: "img/telas/sprang-calado.jpg",
       mosaico: "img/telas/sprang-calado-tile.png",
       paleta: ["#1f6f78", "#2c8590"]
@@ -165,7 +165,7 @@ window.CP_DATA = {
       id: "sprang-sz",
       nombre: "Sprang SZ",
       familia: "texturas",
-      pieza: "img/telas/sprang-sz-pieza.jpg",
+      pieza: "img/telas/sprang-sz-pieza.webp",
       foto: "img/telas/sprang-sz.jpg",
       mosaico: "img/telas/sprang-sz-tile.jpg",
       paleta: ["#1f6f8c", "#e4eab4", "#1e5f5a"]
@@ -174,10 +174,19 @@ window.CP_DATA = {
       id: "sprang-juego-de-color",
       nombre: "Sprang juego de color",
       familia: "texturas",
-      pieza: "img/telas/sprang-juego-de-color-pieza.jpg",
+      pieza: "img/telas/sprang-juego-de-color-pieza.webp",
       foto: "img/telas/sprang-juego-de-color.jpg",
       mosaico: "img/telas/sprang-juego-de-color-tile.jpg",
       paleta: ["#e8c4b8", "#9c3f26"]
+    },
+    {
+      id: "telar-vertical-brocado",
+      nombre: "Telar vertical brocado",
+      familia: "texturas",
+      pieza: "img/telas/telar-vertical-brocado-pieza.webp",
+      foto: "img/telas/telar-vertical-brocado.jpg",
+      mosaico: "img/telas/telar-vertical-brocado-tile.jpg",
+      paleta: ["#1d5f68", "#c9eba6"]
     },
 
     // Telas de muestra: se van reemplazando por las reales
