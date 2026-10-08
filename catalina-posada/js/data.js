@@ -44,6 +44,15 @@ window.CP_DATA = {
       mosaico: "img/telas/overshoot-tile.jpg",
       paleta: ["#c9b21e", "#6c6aa8", "#b9a9d6"]
     },
+    {
+      id: "overshoot-rombo-sol",
+      nombre: "Overshoot rombo sol",
+      familia: "texturas",
+      pieza: "img/telas/overshoot-rombo-sol-pieza.jpg",
+      foto: "img/telas/overshoot-rombo-sol.jpg",
+      mosaico: "img/telas/overshoot-rombo-sol-tile.jpg",
+      paleta: ["#8a2f6a", "#5a2448", "#e6dcea", "#b9a9d6"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
