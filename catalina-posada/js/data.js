@@ -134,6 +134,15 @@ window.CP_DATA = {
       mosaico: "img/telas/tafetan-lana-algodon-tile.jpg",
       paleta: ["#b07a3e", "#6f97c8", "#efece4"]
     },
+    {
+      id: "sarga-tafetan",
+      nombre: "Sarga tafetán",
+      familia: "texturas",
+      pieza: "img/telas/sarga-tafetan-pieza.jpg",
+      foto: "img/telas/sarga-tafetan.jpg",
+      mosaico: "img/telas/sarga-tafetan-tile.jpg",
+      paleta: ["#d4ac1f", "#ebe6d9"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
