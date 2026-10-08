@@ -260,6 +260,15 @@ window.CP_DATA = {
       mosaico: "img/telas/sarga-tile.jpg",
       paleta: ["#d8cdb4", "#6bb85a", "#6e1a1a", "#b39a76"]
     },
+    {
+      id: "piviones",
+      nombre: "Piviones",
+      familia: "texturas",
+      pieza: "img/telas/piviones-pieza.webp",
+      foto: "img/telas/piviones.jpg",
+      mosaico: "img/telas/piviones-tile.jpg",
+      paleta: ["#a8821f", "#d8cfbd", "#f1ede4"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
