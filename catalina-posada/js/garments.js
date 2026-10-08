@@ -6,6 +6,21 @@
  *   interior: zonas que muestran el revés o el interior (más oscuras)
  */
 window.CP_PRENDAS = {
+  /*
+   * Prenda a partir de una foto real: la tela se pinta dentro de la máscara y
+   * encima se aplican las sombras y luces extraídas de la foto original.
+   */
+  "chaqueta-telar": {
+    foto: true,
+    ancho: 768,
+    alto: 1024,
+    escala: 230,
+    mascara: "img/prendas/chaqueta-mascara.png",
+    sombras: "img/prendas/chaqueta-sombras.png",
+    luces: "img/prendas/chaqueta-luces.png",
+    maniqui: "img/prendas/chaqueta-maniqui.png"
+  },
+
   chaqueta: {
     percha: true,
     silueta:

@@ -163,7 +163,37 @@
   }
 
   var uid = 0;
+
+  // Prenda fotografiada: la tela dentro de la máscara, con la luz de la foto encima
+  function svgFoto(forma, tela) {
+    var n = ++uid;
+    var S = forma.escala;
+    var w = forma.ancho, h = forma.alto;
+    var img = function (href, extra) {
+      return '<image href="' + href + '" width="' + w + '" height="' + h + '" ' + (extra || "") + "/>";
+    };
+    var html =
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + tela.nombre + '">' +
+      "<defs>" +
+      '<pattern id="p' + n + '" patternUnits="userSpaceOnUse" width="' + S + '" height="' + S + '">' +
+      '<image href="' + window.CP_mosaicoDe(tela) + '" width="' + S + '" height="' + S + '" preserveAspectRatio="xMidYMid slice"/></pattern>' +
+      '<mask id="m' + n + '" maskUnits="userSpaceOnUse" x="0" y="0" width="' + w + '" height="' + h + '">' + img(forma.mascara) + "</mask>" +
+      "</defs>" +
+      img(forma.maniqui) +
+      '<g mask="url(#m' + n + ')" style="isolation:isolate">' +
+      '<rect width="' + w + '" height="' + h + '" fill="url(#p' + n + ')"/>' +
+      img(forma.sombras, 'style="mix-blend-mode:multiply"') +
+      img(forma.luces, 'style="mix-blend-mode:screen" opacity=".35"') +
+      "</g></svg>";
+    var tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    var svg = tmp.firstChild;
+    svg.style.filter = "drop-shadow(0 22px 26px rgba(40,30,20,.16))";
+    return svg;
+  }
+
   function svgPrenda(forma, tela) {
+    if (forma.foto) return svgFoto(forma, tela);
     var n = ++uid;
     var S = tela.mosaico ? 340 : tela.foto ? 180 : 110;
     var NS = "http://www.w3.org/2000/svg";

@@ -314,6 +314,7 @@ window.CP_DATA = {
   ],
 
   prendas: [
+    { id: "chaqueta-telar", nombre: "Chaqueta de telar" },
     { id: "chaqueta", nombre: "Chaqueta recta" },
     { id: "vestido", nombre: "Vestido midi" },
     { id: "pantalon", nombre: "Pantalón amplio" }
