@@ -261,7 +261,7 @@ window.CP_DATA = {
     },
     {
       id: "piviones",
-      nombre: "Piviones",
+      nombre: "Pibiones",
       familia: "texturas",
       pieza: "img/telas/piviones-pieza.jpg",
       foto: "img/telas/piviones.jpg",
@@ -288,7 +288,7 @@ window.CP_DATA = {
     },
     {
       id: "crammed-and-space",
-      nombre: "Crammed and space",
+      nombre: "Crammed and spaced",
       familia: "rayas-cuadros",
       pieza: "img/telas/crammed-and-space-pieza.jpg",
       foto: "img/telas/crammed-and-space.jpg",
@@ -297,7 +297,7 @@ window.CP_DATA = {
     },
     {
       id: "razo",
-      nombre: "Razo",
+      nombre: "Raso",
       familia: "lisas",
       pieza: "img/telas/razo-pieza.jpg",
       foto: "img/telas/razo.jpg",
@@ -314,10 +314,7 @@ window.CP_DATA = {
   ],
 
   prendas: [
-    { id: "chaqueta-telar", nombre: "Chaqueta de telar" },
-    { id: "chaqueta", nombre: "Chaqueta recta" },
-    { id: "vestido", nombre: "Vestido midi" },
-    { id: "pantalon", nombre: "Pantalón amplio" }
+    { id: "chaqueta-telar", nombre: "Chaqueta de telar" }
   ],
 
   renders: {
