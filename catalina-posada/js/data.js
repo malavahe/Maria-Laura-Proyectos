@@ -89,6 +89,15 @@ window.CP_DATA = {
       mosaico: "img/telas/tafetan-algodon-bambu-tile.jpg",
       paleta: ["#c7e3c0", "#8c7558", "#efece6"]
     },
+    {
+      id: "tafetan-bambu-algodon",
+      nombre: "Tafetán con bambú y algodón",
+      familia: "rayas-cuadros",
+      pieza: "img/telas/tafetan-bambu-algodon-pieza.jpg",
+      foto: "img/telas/tafetan-bambu-algodon.jpg",
+      mosaico: "img/telas/tafetan-bambu-algodon-tile.jpg",
+      paleta: ["#8fb3e0", "#6ea043", "#b8a07a", "#f1ede4"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
