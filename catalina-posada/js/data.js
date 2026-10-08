@@ -71,6 +71,15 @@ window.CP_DATA = {
       mosaico: "img/telas/tafetan-tile.jpg",
       paleta: ["#e2bd2c", "#3a3a32", "#ece8e2"]
     },
+    {
+      id: "tafetan-fique-lana",
+      nombre: "Tafetán con fique y lana",
+      familia: "texturas",
+      pieza: "img/telas/tafetan-fique-lana-pieza.jpg",
+      foto: "img/telas/tafetan-fique-lana.jpg",
+      mosaico: "img/telas/tafetan-fique-lana-tile.jpg",
+      paleta: ["#2b2a28", "#ece9e2", "#cdb98f"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
