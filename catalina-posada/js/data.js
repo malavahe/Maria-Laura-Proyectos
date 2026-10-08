@@ -188,6 +188,15 @@ window.CP_DATA = {
       mosaico: "img/telas/telar-vertical-brocado-tile.jpg",
       paleta: ["#1d5f68", "#c9eba6"]
     },
+    {
+      id: "brocado",
+      nombre: "Brocado",
+      familia: "texturas",
+      pieza: "img/telas/brocado-pieza.webp",
+      foto: "img/telas/brocado.jpg",
+      mosaico: "img/telas/brocado-tile.jpg",
+      paleta: ["#e9ec8f", "#efeadc", "#a8642c"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
