@@ -125,6 +125,15 @@ window.CP_DATA = {
       mosaico: "img/telas/sarga-zigzag-tile.jpg",
       paleta: ["#1f8a3c", "#8dbf63", "#e6e3df"]
     },
+    {
+      id: "tafetan-lana-algodon",
+      nombre: "Tafetán lana algodón",
+      familia: "lisas",
+      pieza: "img/telas/tafetan-lana-algodon-pieza.jpg",
+      foto: "img/telas/tafetan-lana-algodon.jpg",
+      mosaico: "img/telas/tafetan-lana-algodon-tile.jpg",
+      paleta: ["#b07a3e", "#6f97c8", "#efece4"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
