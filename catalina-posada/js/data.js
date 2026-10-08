@@ -287,6 +287,15 @@ window.CP_DATA = {
       mosaico: "img/telas/espina-de-pescado-tile.jpg",
       paleta: ["#2a6fb0", "#1f9a55", "#b8a6d9", "#f1ede4"]
     },
+    {
+      id: "crammed-and-space",
+      nombre: "Crammed and space",
+      familia: "rayas-cuadros",
+      pieza: "img/telas/crammed-and-space-pieza.webp",
+      foto: "img/telas/crammed-and-space.jpg",
+      mosaico: "img/telas/crammed-and-space-tile.jpg",
+      paleta: ["#1c8a3c", "#9fb4cf", "#0f3d1e"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
