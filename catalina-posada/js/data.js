@@ -296,6 +296,15 @@ window.CP_DATA = {
       mosaico: "img/telas/crammed-and-space-tile.jpg",
       paleta: ["#1c8a3c", "#9fb4cf", "#0f3d1e"]
     },
+    {
+      id: "razo",
+      nombre: "Razo",
+      familia: "lisas",
+      pieza: "img/telas/razo-pieza.webp",
+      foto: "img/telas/razo.jpg",
+      mosaico: "img/telas/razo-tile.jpg",
+      paleta: ["#1f9a55", "#eef0e8", "#e59a86"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
