@@ -170,6 +170,15 @@ window.CP_DATA = {
       mosaico: "img/telas/sprang-sz-tile.jpg",
       paleta: ["#1f6f8c", "#e4eab4", "#1e5f5a"]
     },
+    {
+      id: "sprang-juego-de-color",
+      nombre: "Sprang juego de color",
+      familia: "texturas",
+      pieza: "img/telas/sprang-juego-de-color-pieza.jpg",
+      foto: "img/telas/sprang-juego-de-color.jpg",
+      mosaico: "img/telas/sprang-juego-de-color-tile.jpg",
+      paleta: ["#e8c4b8", "#9c3f26"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
