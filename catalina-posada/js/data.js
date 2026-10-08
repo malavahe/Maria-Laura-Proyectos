@@ -35,6 +35,15 @@ window.CP_DATA = {
       mosaico: "img/telas/cinturon-de-monje-tile.jpg",
       paleta: ["#7a1f55", "#1fae4c", "#c9b5d4"]
     },
+    {
+      id: "overshoot",
+      nombre: "Overshoot",
+      familia: "texturas",
+      pieza: "img/telas/overshoot-pieza.jpg",
+      foto: "img/telas/overshoot.jpg",
+      mosaico: "img/telas/overshoot-tile.jpg",
+      paleta: ["#c9b21e", "#6c6aa8", "#b9a9d6"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
