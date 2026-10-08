@@ -269,6 +269,15 @@ window.CP_DATA = {
       mosaico: "img/telas/piviones-tile.jpg",
       paleta: ["#a8821f", "#d8cfbd", "#f1ede4"]
     },
+    {
+      id: "sarga-ondulada",
+      nombre: "Sarga ondulada",
+      familia: "texturas",
+      pieza: "img/telas/sarga-ondulada-pieza.webp",
+      foto: "img/telas/sarga-ondulada.jpg",
+      mosaico: "img/telas/sarga-ondulada-tile.jpg",
+      paleta: ["#1f9a55", "#e3dc98", "#e79a86"]
+    },
 
     // Telas de muestra: se van reemplazando por las reales
     {
