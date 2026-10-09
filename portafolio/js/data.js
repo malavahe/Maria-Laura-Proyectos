@@ -250,27 +250,42 @@ window.ML_DATA = {
       id: "ricardo-pava-eventos",
       cliente: "Ricardo Pava",
       sector: "Sastrería masculina a la medida",
-      titulo: "Calendario de eventos en Colombia",
+      titulo: "Agente programado: calendario estratégico de eventos",
       categorias: ["agentes", "moda"],
       estado: "En curso",
       color: "rosa",
       visual: "calendario",
+      portada: "ilustracion",
       resumen:
-        "Un agente que arma el calendario de eventos en las principales ciudades de Colombia donde la marca puede tener presencia y oportunidades de negocio.",
+        "Un agente que arma el calendario de eventos del trimestre en las principales ciudades de Colombia y convierte cada uno en una oportunidad: a quién vestir, a quién invitar, qué contenido grabar y cuándo actuar.",
+      cifras: [
+        ["36", "eventos con fecha en el trimestre"],
+        ["8", "momentos estratégicos"],
+        ["6", "alertas de los próximos 14 días"],
+        ["18", "fuentes enlazadas"]
+      ],
       contexto:
-        "Las oportunidades de la marca (ferias, galas, eventos empresariales y sociales) están repartidas en varias ciudades y fechas.",
+        "Arte, música, cine, gastronomía, ferias y premiaciones: cada evento es una oportunidad de visibilidad, de venta o de relación con clientes, pero la agenda está dispersa y los plazos llegan antes de lo que parece. Un frac sobre medidas para una premiación necesita varias pruebas, así que enterarse una semana antes es enterarse tarde. El agente reúne la agenda y la convierte en un plan. El mismo modelo sirve para cualquier empresa que quiera estudiar con tiempo dónde estar y preparar su networking con estrategia, no solo para la moda.",
       hice: [
-        "Definí qué tipo de eventos le interesan a la marca.",
-        "Configuré el agente para buscar eventos en las ciudades principales del país.",
-        "Organicé los resultados en un calendario fácil de consultar."
+        "Programé el agente para construir y actualizar el calendario con las fuentes de cada evento, priorizando Bogotá y luego Medellín, Cali, Cartagena y Barranquilla, más los eventos internacionales que mueven la marca.",
+        "Organicé los eventos por mes y por categoría (arte, música, cine, gastronomía, ferias textiles, revistas y premiaciones, cultura), con filtros, una línea de qué trata cada uno, sede y enlace a la fuente.",
+        "Diseñé una sección de alertas para los próximos 14 días: cada una trae la fecha y la acción concreta para hoy, por ejemplo cerrar pruebas a tiempo para una alfombra roja o invitar a clientes clave a un evento.",
+        "Creé la sección de estrategia: los momentos del trimestre donde la marca gana más, con la línea de producto que conectan y las acciones para entrar (vestir a un nominado, una cápsula para una feria, un recorrido privado con clientes, una serie de contenido).",
+        "Lo dejé como un modelo replicable para otras empresas y sectores: cambian las fuentes y los criterios, y el resultado sigue siendo una agenda pensada para hacer networking con intención."
       ],
       habilidades: [
         "Agentes de IA programados",
         "Inteligencia de mercado",
-        "Organización de información"
+        "Planeación estratégica de eventos",
+        "Networking estratégico",
+        "Investigación con fuentes verificables"
       ],
-      herramientas: ["Agentes de IA", "Tareas programadas", "Calendario"],
-      media: []
+      herramientas: ["Claude", "Tareas programadas"],
+      media: [
+        { tipo: "imagen", src: "img/proyectos/ricardo-pava/eventos-portada.jpg", texto: "Calendario del trimestre: resumen de lo urgente y filtros por categoría." },
+        { tipo: "imagen", src: "img/proyectos/ricardo-pava/eventos-alertas.jpg", texto: "Alertas de los próximos 14 días, cada una con la acción para hoy." },
+        { tipo: "imagen", src: "img/proyectos/ricardo-pava/eventos-estrategia.jpg", texto: "Estrategia: los momentos del trimestre donde la marca gana más y cómo entrar." }
+      ]
     },
     {
       id: "integral-solutions-contenido",
