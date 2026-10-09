@@ -12,6 +12,22 @@ automatización, agentes, contenido y video con inteligencia artificial.
 - `js/escena.js`: figuras 3D de la portada (three.js). Si no carga, queda un fondo CSS.
 - `img/proyectos/<cliente>/`: fotos y videos de cada proyecto.
 
+## Videos de la portada (reel)
+
+1. Guarda el video en `img/reel/` en .mp4, idealmente vertical (9:16) y de menos de 20 MB.
+2. En `js/data.js`, agrégalo a `reel`:
+
+```js
+reel: [
+  { src: "img/reel/campana-1.mp4", poster: "img/reel/campana-1.jpg", titulo: "Campaña Lila Vela" }
+]
+```
+
+Los 5 primeros se ven en la portada, al lado del nombre. Con dos o más videos aparece además
+la sección **Biblioteca**, con todos en cuadrícula y filtros por `etiqueta`. Se reproducen
+solos y sin sonido; al hacer clic se abren con sonido y se puede pasar al siguiente.
+También acepta enlaces de YouTube o Vimeo en `src` (formato embed).
+
 ## Agregar fotos o videos a un proyecto
 
 1. Guarda el archivo en `img/proyectos/<cliente>/` (por ejemplo `img/proyectos/beauty-studio/menu-whatsapp.jpg`).
