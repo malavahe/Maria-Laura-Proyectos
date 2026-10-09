@@ -80,6 +80,9 @@
       '</div><div class="ciudades"><span>Bogotá</span><span>Medellín</span><span>Cali</span><span>Barranquilla</span></div></div>',
     contenido: '<div class="pieza"><i></i><i></i><i></i><i></i><i></i><i></i></div>',
     shooting: '<div class="pieza"><span class="rec">REC</span></div>',
+    probador:
+      '<div class="pieza"><span class="foto-tag">Foto en el showroom</span><div class="saco"><i></i></div>' +
+      '<div class="muestras"><b></b><b></b><b></b></div></div>',
     video:
       '<div class="pieza"><div class="pantalla"><span class="play"></span></div>' +
       '<div class="timeline"><small>00:42</small><span class="barra"><i></i></span><small>03:10</small></div></div>'
@@ -200,7 +203,7 @@
 
   /* ---------- Reel de la portada y biblioteca de videos ---------- */
   var reel = (D.reel || []).filter(function (r) { return r && r.src; });
-  var portada = reel.slice(0, 5);               // la portada muestra los 5 primeros
+  var enPortada = reel.slice(0, 5);               // la portada muestra los 5 primeros
   var reelIdx = 0, reelTimer = null, visorIdx = 0, visorOrigen = null;
   var filtroBib = "todos", bibObs = null;
   function esEmbed(src) { return /youtube\.com|youtu\.be|vimeo\.com/.test(src); }
@@ -218,13 +221,13 @@
   if (reel.length) {
     $("#inicio").classList.add("con-reel");
     $("#reel").hidden = false;
-    $("#reel-pila").innerHTML = portada.map(function (r, i) {
+    $("#reel-pila").innerHTML = enPortada.map(function (r, i) {
       return '<button class="reel-carta" type="button" data-i="' + i + '" aria-label="Ver ' + esc(r.titulo || "video " + (i + 1)) + ' con sonido">' +
         medioMudo(r, i, i === 0) + '<span class="reel-brillo"></span>' +
         (r.titulo ? '<span class="reel-nombre">' + esc(r.titulo) + "</span>" : "") +
         '<span class="reel-play" aria-hidden="true"></span></button>';
     }).join("");
-    $("#reel-puntos").innerHTML = portada.length > 1 ? portada.map(function (_, i) {
+    $("#reel-puntos").innerHTML = enPortada.length > 1 ? enPortada.map(function (_, i) {
       return '<button type="button" data-ir-reel="' + i + '" aria-label="Video ' + (i + 1) + '"></button>';
     }).join("") : "";
     colocarReel();
@@ -246,12 +249,12 @@
   }
   function programarReel() {
     clearInterval(reelTimer);
-    if (portada.length > 1 && !reducido) reelTimer = setInterval(function () {
-      reelIdx = (reelIdx + 1) % portada.length; colocarReel();
+    if (enPortada.length > 1 && !reducido) reelTimer = setInterval(function () {
+      reelIdx = (reelIdx + 1) % enPortada.length; colocarReel();
     }, 7000);
   }
   function colocarReel() {
-    var n = portada.length;
+    var n = enPortada.length;
     $$(".reel-carta").forEach(function (c, i) {
       var d = (i - reelIdx + n) % n;            // 0 = al frente
       if (d > n / 2) d -= n;                    // reparte a ambos lados
