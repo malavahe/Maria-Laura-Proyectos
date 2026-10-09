@@ -78,7 +78,6 @@ window.ML_DATA = {
       estado: "Entregado",
       color: "rosa",
       visual: "chat",
-      portada: "ilustracion",
       resumen:
         "Vale es la asistente virtual de Beauty Studio en respond.io: saluda, entiende qué servicio busca cada clienta, le envía sola la ficha y el video del servicio y responde precios, duración y políticas.",
       cifras: [
@@ -88,7 +87,7 @@ window.ML_DATA = {
         ["3", "fuentes de conocimiento"]
       ],
       contexto:
-        "Beauty Studio es un centro de estética de cejas, pestañas, labios, manos, pies y micropigmentación, con 37 servicios en su portafolio. Las consultas llegan por WhatsApp, Instagram y Facebook, y cada una pide encontrar la ficha, el precio y las políticas correctas. La solución se entregó construida y documentada, lista para pilotear y activar en los canales.",
+        "Beauty Studio es un centro de estética de cejas, pestañas, labios, manos, pies y micropigmentación, con 37 servicios en su portafolio. Las consultas llegan por WhatsApp, Instagram y Facebook, y cada una pide encontrar la ficha, el precio y las políticas correctas. La solución se entregó construida, lista para pilotear y activar en los canales.",
       hice: [
         "Diseñé a Vale: quién es, cómo habla en nombre del equipo y cuándo pasa la conversación a una persona (agendar, quejas, garantías).",
         "Creé un sistema de dos etiquetas: la de categoría enciende el flujo y la de subservicio elige la ficha exacta. Al terminar, el flujo las limpia para poder volver a usarse.",
@@ -96,29 +95,17 @@ window.ML_DATA = {
         "Resolví el tope de 10 condiciones por bloque de respond.io con un bloque de ramas anidado, para que manos soporte sus 15 servicios.",
         "Separé comportamiento y conocimiento: las instrucciones (tope de 10.000 caracteres) solo guardan cómo actúa Vale; precios, políticas y tiempos viven en tres documentos que se actualizan sin tocar los flujos.",
         "Armé el flujo de recontactos: si la clienta deja de responder, recibe un mensaje a los 25 minutos y otro a las 2 horas, con salida automática si contesta o la toma un asesor.",
-        "Diseñé la plantilla de WhatsApp para el recontacto a los 3 días, que trae sola el nombre de la clienta y el último servicio que consultó.",
-        "Audité cada flujo contra el menú oficial y entregué un manual de operación para que el equipo modifique y alimente la automatización por su cuenta."
+        "Audité cada flujo contra el menú oficial de servicios para que ninguna ficha quedara por fuera."
       ],
       habilidades: [
         "Diseño conversacional",
         "Arquitectura de flujos automatizados",
         "Prompt engineering",
         "Gestión de conocimiento para IA",
-        "Atención omnicanal",
-        "Plantillas de WhatsApp Business",
-        "Documentación y capacitación"
+        "Atención omnicanal"
       ],
-      herramientas: ["respond.io", "WhatsApp Business", "Instagram", "Facebook Messenger", "Plantillas de Meta"],
-      entregables: [
-        "Documento de entrega del proyecto",
-        "Manual de operación de Vale en respond.io",
-        "Guía de recontacto a 3 días y plantillas de WhatsApp"
-      ],
-      media: [
-        { tipo: "imagen", src: "img/proyectos/beauty-studio/flujo-pestanas.jpg", texto: "Flujo de catálogo de pestañas: se activa con la etiqueta de categoría, espera 10 segundos y se divide en una rama por servicio." },
-        { tipo: "imagen", src: "img/proyectos/beauty-studio/ramas-etiquetas.jpg", texto: "Cada rama escucha su etiqueta de subservicio, por ejemplo IA PESTAÑAS SEDA." },
-        { tipo: "imagen", src: "img/proyectos/beauty-studio/envio-ficha.jpg", texto: "Cada rama envía la ficha del servicio y al final quita las dos etiquetas." }
-      ]
+      herramientas: ["respond.io", "WhatsApp Business", "Instagram", "Facebook Messenger"],
+      media: []
     },
     {
       id: "ricardo-pava-procesos",
