@@ -88,6 +88,7 @@
     return '<div class="ilu ilu-' + p.visual + '" aria-hidden="true">' + (ILU[p.visual] || ILU.contenido) + "</div>";
   }
   function portada(p) {
+    if (p.portada === "ilustracion") return ilustracion(p);
     var img = (p.media || []).filter(function (m) { return m.tipo === "imagen"; })[0];
     return img ? '<img src="' + esc(img.src) + '" alt="' + esc(img.texto || p.titulo) + '" loading="lazy">' : ilustracion(p);
   }
@@ -361,10 +362,14 @@
       '<div class="tarjeta-cliente"><span>' + esc(p.cliente) + " · " + esc(p.sector) + "</span>" + estado(p) + "</div>" +
       '<h2 id="modal-titulo">' + esc(p.titulo) + "</h2>" +
       '<p class="resumen">' + esc(p.resumen) + "</p>" +
+      (p.cifras ? '<dl class="cifras">' + p.cifras.map(function (c) {
+        return "<div><dt>" + esc(c[0]) + "</dt><dd>" + esc(c[1]) + "</dd></div>";
+      }).join("") + "</dl>" : "") +
       '<div class="bloque"><h3>Contexto</h3><p>' + esc(p.contexto) + "</p></div>" +
       '<div class="bloque"><h3>Qué hice</h3><ol class="pasos">' + p.hice.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ol></div>" +
       '<div class="bloque"><h3>Habilidades</h3><div class="habilidades">' + p.habilidades.map(function (h) { return '<span class="habilidad">' + esc(h) + "</span>"; }).join("") + "</div></div>" +
       '<div class="bloque"><h3>Herramientas y canales</h3><div class="herramientas">' + p.herramientas.map(function (h) { return "<span>" + esc(h) + "</span>"; }).join("") + "</div></div>" +
+      (p.entregables ? '<div class="bloque"><h3>Entregables</h3><ul class="entregables">' + p.entregables.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul></div>" : "") +
       '<div class="modal-nav"><button type="button" data-mover="-1">← Anterior</button><button type="button" data-mover="1">Siguiente →</button></div>';
     if (modal.hidden) {
       modal.hidden = false;
