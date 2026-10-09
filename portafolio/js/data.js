@@ -31,7 +31,10 @@
  *                 { tipo: "imagen", src: "img/proyectos/beauty-studio/flujo-1.jpg", texto: "Menú principal en WhatsApp" }
  *                 { tipo: "video",  src: "img/proyectos/lila-vela/teaser.mp4", texto: "Teaser de la colección" }
  *                 { tipo: "embed",  src: "https://www.youtube.com/embed/ID", texto: "Clase del diplomado" }
- *               La primera imagen se usa también como portada de la tarjeta.
+ *               La primera imagen se usa también como portada de la tarjeta,
+ *               salvo que el proyecto tenga portada: "ilustracion".
+ *   cifras:      opcional, datos clave del proyecto: [["37", "servicios"], ...]
+ *   entregables: opcional, lista de documentos o piezas entregadas.
  */
 
 window.ML_DATA = {
@@ -69,30 +72,39 @@ window.ML_DATA = {
     {
       id: "beauty-studio-agente",
       cliente: "Beauty Studio",
-      sector: "Centro de belleza y estética",
-      titulo: "Agente de IA que atiende WhatsApp, Instagram y Facebook",
+      sector: "Centro de estética",
+      titulo: "Vale: asistente de IA para WhatsApp, Instagram y Facebook",
       categorias: ["automatizacion", "agentes"],
       estado: "Entregado",
       color: "rosa",
       visual: "chat",
       resumen:
-        "Asistente de inteligencia artificial en respond.io que responde de forma automática a las clientas en los tres canales del negocio: menús, servicios y dudas frecuentes.",
+        "Vale es la asistente virtual de Beauty Studio en respond.io: saluda, entiende qué servicio busca cada clienta, le envía sola la ficha y el video del servicio y responde precios, duración y políticas.",
+      cifras: [
+        ["3", "canales"],
+        ["5", "flujos de catálogo"],
+        ["37", "servicios cubiertos"],
+        ["3", "fuentes de conocimiento"]
+      ],
       contexto:
-        "Beauty Studio ofrece servicios de pestañas, cejas, labios y uñas. Las consultas llegan por WhatsApp, Instagram y Facebook, y casi todas se repiten: qué servicios hay, cómo funciona cada uno, cómo agendar.",
+        "Beauty Studio es un centro de estética de cejas, pestañas, labios, manos, pies y micropigmentación, con 37 servicios en su portafolio. Las consultas llegan por WhatsApp, Instagram y Facebook, y cada una pide encontrar la ficha, el precio y las políticas correctas. La solución se entregó construida, lista para pilotear y activar en los canales.",
       hice: [
-        "Creé el asistente de IA dentro de respond.io y lo capacité con la información de los servicios del estudio.",
-        "Diseñé los menús de conversación para que la clienta llegue rápido al servicio que busca.",
-        "Armé los flujos de respuesta para WhatsApp, Instagram y Facebook desde una sola bandeja.",
-        "Definí qué preguntas resuelve el agente solo y en qué momento la conversación pasa a una persona del equipo."
+        "Diseñé a Vale: quién es, cómo habla en nombre del equipo y cuándo pasa la conversación a una persona (agendar, quejas, garantías).",
+        "Creé un sistema de dos etiquetas: la de categoría enciende el flujo y la de subservicio elige la ficha exacta. Al terminar, el flujo las limpia para poder volver a usarse.",
+        "Construí cinco flujos de catálogo (manos, pies, pestañas, cejas y labios) que cubren los 37 servicios, cada uno con mensaje de introducción, ficha y video cuando aplica.",
+        "Resolví el tope de 10 condiciones por bloque de respond.io con un bloque de ramas anidado, para que manos soporte sus 15 servicios.",
+        "Separé comportamiento y conocimiento: las instrucciones (tope de 10.000 caracteres) solo guardan cómo actúa Vale; precios, políticas y tiempos viven en tres documentos que se actualizan sin tocar los flujos.",
+        "Armé el flujo de recontactos: si la clienta deja de responder, recibe un mensaje a los 25 minutos y otro a las 2 horas, con salida automática si contesta o la toma un asesor.",
+        "Audité cada flujo contra el menú oficial de servicios para que ninguna ficha quedara por fuera."
       ],
       habilidades: [
         "Diseño conversacional",
-        "Entrenamiento de agentes de IA",
-        "Construcción de flujos automatizados",
-        "Atención omnicanal",
-        "Estructuración de base de conocimiento"
+        "Arquitectura de flujos automatizados",
+        "Prompt engineering",
+        "Gestión de conocimiento para IA",
+        "Atención omnicanal"
       ],
-      herramientas: ["respond.io", "WhatsApp", "Instagram", "Facebook Messenger"],
+      herramientas: ["respond.io", "WhatsApp Business", "Instagram", "Facebook Messenger"],
       media: []
     },
     {
