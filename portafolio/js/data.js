@@ -3,7 +3,17 @@
  * editar este archivo.
  *
  * PERFIL
+ *   rol: una línea por especialidad; se muestran bajo el nombre.
  *   contacto: deja vacío ("") lo que no quieras mostrar; ese botón se oculta.
+ *
+ * REEL (videos de la portada)
+ *   Se ven apenas entra la persona, al lado del nombre. Se reproducen solos,
+ *   sin sonido, y al hacer clic se abren grandes con sonido.
+ *   Guarda los videos en img/reel/ (formato .mp4, vertical 9:16 idealmente,
+ *   menos de 20 MB cada uno) y agrégalos así:
+ *     { src: "img/reel/campana-1.mp4", poster: "img/reel/campana-1.jpg", titulo: "Campaña Lila Vela" }
+ *   poster es opcional: una foto que se ve mientras el video carga.
+ *   Si la lista está vacía, la portada muestra solo las figuras 3D.
  *
  * CATEGORÍAS
  *   id, nombre y color (uno de: rosa | lila | azul | limon).
@@ -24,15 +34,20 @@
 window.ML_DATA = {
   perfil: {
     nombre: "María Laura",
-    rol: "Especialista en automatización de procesos empresariales con inteligencia artificial",
-    lema: "Convierto procesos que hoy dependen de personas repitiendo tareas en sistemas que responden, organizan y crean solos.",
+    rol: [
+      "Especialista en automatización de procesos empresariales con inteligencia artificial",
+      "Experta en creación de contenido cinematográfico hiperrealista"
+    ],
+    lema: "Convierto procesos que hoy dependen de personas repitiendo tareas en sistemas que responden, organizan y crean solos. Y produzco con IA imágenes y videos cinematográficos hiperrealistas.",
     contacto: {
-      email: "",
-      whatsapp: "", // solo números, con indicativo: 573001234567
+      email: "malavahe@hotmail.com",
+      whatsapp: "573197190608", // solo números, con indicativo
       linkedin: "",
-      instagram: ""
+      instagram: "https://www.instagram.com/malavahe/"
     }
   },
+
+  reel: [],
 
   categorias: [
     { id: "automatizacion", nombre: "Automatización con IA", color: "rosa" },

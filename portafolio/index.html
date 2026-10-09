@@ -34,16 +34,23 @@
         <span class="orbe orbe-1"></span><span class="orbe orbe-2"></span>
         <span class="orbe orbe-3"></span><span class="orbe orbe-4"></span>
       </div>
+      <div class="hero-interior">
       <div class="hero-texto">
         <p class="eyebrow"><span class="punto"></span> Portafolio</p>
         <h1 id="hero-nombre">María Laura</h1>
-        <p class="hero-rol" id="hero-rol"></p>
+        <div class="hero-rol" id="hero-rol"></div>
         <p class="hero-lead" id="hero-lema"></p>
         <div class="hero-acciones">
           <a class="btn" href="#proyectos">Ver proyectos</a>
           <a class="btn btn-vidrio" href="#contacto">Hablemos</a>
         </div>
         <dl class="hero-cifras" id="hero-cifras"></dl>
+      </div>
+      <div class="reel" id="reel" hidden>
+        <p class="reel-titulo"><span class="rec-punto"></span> Reel · cine hiperrealista con IA</p>
+        <div class="reel-pila" id="reel-pila"></div>
+        <div class="reel-puntos" id="reel-puntos"></div>
+      </div>
       </div>
       <a class="hero-scroll" href="#proyectos" aria-label="Bajar a proyectos"><span></span></a>
     </section>
@@ -113,12 +120,12 @@
         <button class="cap" type="button" data-color="limon">
           <span class="cap-cara cap-frente">
             <span class="cap-num">04</span>
-            <span class="cap-titulo">Contenido y video con IA</span>
+            <span class="cap-titulo">Cine hiperrealista con IA</span>
             <span class="cap-gira">Ver más</span>
           </span>
           <span class="cap-cara cap-reverso">
-            <span class="cap-titulo">Contenido y video con IA</span>
-            <span class="cap-texto">Shootings, piezas para redes y videos de estética cinematográfica o educativa, producidos con inteligencia artificial.</span>
+            <span class="cap-titulo">Cine hiperrealista con IA</span>
+            <span class="cap-texto">Imágenes y videos cinematográficos hiperrealistas: shootings, campañas, piezas para redes y videos educativos, producidos con inteligencia artificial.</span>
           </span>
         </button>
       </div>
@@ -149,8 +156,18 @@
 
   <footer class="pie">
     <span>© <span id="anio"></span> María Laura</span>
+    <a href="https://www.instagram.com/malavahe/" target="_blank" rel="noopener">@malavahe</a>
     <a href="#inicio">Volver arriba</a>
   </footer>
+
+  <div class="visor" id="visor" hidden>
+    <div class="modal-fondo" data-cerrar-visor></div>
+    <div class="visor-caja" role="dialog" aria-modal="true" aria-label="Video del reel">
+      <button class="modal-cerrar" type="button" data-cerrar-visor aria-label="Cerrar">×</button>
+      <div class="visor-medio" id="visor-medio"></div>
+      <p class="visor-titulo" id="visor-titulo"></p>
+    </div>
+  </div>
 
   <div class="modal" id="modal" hidden>
     <div class="modal-fondo" data-cerrar></div>
