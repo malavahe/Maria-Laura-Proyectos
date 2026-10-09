@@ -290,29 +290,38 @@ window.ML_DATA = {
     {
       id: "integral-solutions-contenido",
       cliente: "Integral Solutions",
-      sector: "Envíos internacionales",
-      titulo: "Creación de contenido para redes",
+      sector: "Carga y envíos internacionales",
+      titulo: "Contenido para redes: envíos sin sustos",
       categorias: ["contenido"],
       estado: "En curso",
       color: "azul",
       visual: "contenido",
       resumen:
-        "Estrategia y producción de contenido para una empresa de envíos internacionales, con apoyo de inteligencia artificial.",
+        "Carruseles y posts para una empresa de carga internacional entre Estados Unidos y Colombia, con un personaje de marca, un mensaje claro contra los miedos de enviar al exterior y piezas de temporada.",
       contexto:
-        "Un servicio de envíos internacionales necesita explicar con claridad cómo funciona y generar confianza en cada publicación.",
+        "Quien envía o compra en el exterior tiene miedos concretos: cargos que aparecen al final, paquetes sin rastro y nadie que responda. El contenido de Integral Solution parte de esos miedos y responde con la promesa de la marca: tarifa clara, seguro incluido y una persona real al otro lado.",
       hice: [
-        "Planeé las líneas de contenido de la marca.",
-        "Produje piezas gráficas y textos para redes sociales.",
-        "Uso inteligencia artificial para acelerar la producción sin perder la identidad de la marca."
+        "Definí la línea de mensaje: nombrar los miedos reales de enviar al exterior y contestarlos con la promesa de la marca.",
+        "Desarrollé un sistema visual propio: azul profundo, acento terracota y dorado, tarjetas tipo vidrio y un botón de \"Cotiza ahora\" en cada pieza.",
+        "Usé un personaje de marca, una caja de cartón con gorra de aviador, que cambia de vestuario según la temporada.",
+        "Produje carruseles con estructura de gancho, desarrollo y cierre, como \"Los verdaderos sustos de enviar al exterior\" para Halloween y la serie de mitos y realidades.",
+        "Diseñé posts sueltos para fechas comerciales, como Black Friday, con el paso a paso del servicio de casillero de EE. UU. a Colombia."
       ],
       habilidades: [
         "Estrategia de contenido",
-        "Diseño gráfico con IA",
+        "Diseño de carruseles",
         "Copywriting",
-        "Gestión de redes sociales"
+        "Personaje de marca",
+        "Imagen con IA"
       ],
-      herramientas: ["IA generativa de imagen", "Redes sociales"],
-      media: []
+      herramientas: ["IA generativa de imagen", "Instagram"],
+      media: [
+        { tipo: "imagen", src: "img/proyectos/integral-solutions/halloween-1.webp", texto: "Carrusel de Halloween · 1 de 3: Los verdaderos sustos de enviar al exterior." },
+        { tipo: "imagen", src: "img/proyectos/integral-solutions/halloween-2.webp", texto: "Carrusel de Halloween · 2 de 3: los tres sustos más comunes." },
+        { tipo: "imagen", src: "img/proyectos/integral-solutions/halloween-3.webp", texto: "Carrusel de Halloween · 3 de 3: Aquí no hay sustos, con la promesa de la marca." },
+        { tipo: "imagen", src: "img/proyectos/integral-solutions/black-friday.webp", texto: "Post suelto · Black Friday: el paso a paso para comprar en EE. UU. y recibir en Colombia." },
+        { tipo: "imagen", src: "img/proyectos/integral-solutions/mitos-3.webp", texto: "Carrusel de mitos y realidades · cierre: Enviar al exterior es carísimo." }
+      ]
     },
     {
       id: "lila-vela-contenido",
