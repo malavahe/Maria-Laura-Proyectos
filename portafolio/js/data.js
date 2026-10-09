@@ -52,7 +52,8 @@ window.ML_DATA = {
 
   reel: [
     { src: "img/reel/reel-1.mp4", poster: "img/reel/reel-1.jpg", titulo: "Boceto al atardecer", etiqueta: "Moda" },
-    { src: "img/reel/reel-2.mp4", poster: "img/reel/reel-2.jpg", titulo: "Pradera en la niebla", etiqueta: "Moda" }
+    { src: "img/reel/reel-2.mp4", poster: "img/reel/reel-2.jpg", titulo: "Pradera en la niebla", etiqueta: "Moda" },
+    { src: "img/reel/reel-3.mp4", poster: "img/reel/reel-3.jpg", titulo: "Noche de autos", etiqueta: "Publicidad" }
   ],
 
   categorias: [
