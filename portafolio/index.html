@@ -20,6 +20,7 @@
       <span class="marca-nombre">María Laura</span>
     </a>
     <nav class="menu" aria-label="Secciones">
+      <a href="#biblioteca" id="nav-biblioteca" hidden>Reel</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#capacidades">Capacidades</a>
       <a href="#metodo">Método</a>
@@ -58,6 +59,19 @@
     <div class="cinta" aria-hidden="true">
       <div class="cinta-pista" id="cinta"></div>
     </div>
+
+    <section id="biblioteca" class="seccion biblioteca" hidden>
+      <div class="seccion-cabeza bib-cabeza">
+        <div>
+          <p class="eyebrow"><span class="rec-punto"></span> Cine hiperrealista con IA</p>
+          <h2>Biblioteca</h2>
+          <p class="seccion-lead">Una muestra de los videos que produzco con inteligencia artificial. Toca cualquiera para verlo con sonido.</p>
+        </div>
+        <span class="bib-total" id="bib-total"></span>
+      </div>
+      <div class="filtros" id="bib-filtros"></div>
+      <div class="bib-rejilla" id="bib-rejilla"></div>
+    </section>
 
     <section id="proyectos" class="seccion">
       <div class="seccion-cabeza">
@@ -164,7 +178,9 @@
     <div class="modal-fondo" data-cerrar-visor></div>
     <div class="visor-caja" role="dialog" aria-modal="true" aria-label="Video del reel">
       <button class="modal-cerrar" type="button" data-cerrar-visor aria-label="Cerrar">×</button>
+      <button class="visor-flecha prev" type="button" data-visor="-1" aria-label="Video anterior">←</button>
       <div class="visor-medio" id="visor-medio"></div>
+      <button class="visor-flecha next" type="button" data-visor="1" aria-label="Video siguiente">→</button>
       <p class="visor-titulo" id="visor-titulo"></p>
     </div>
   </div>

@@ -197,27 +197,33 @@
     return '<a class="' + b[2] + '" href="' + esc(b[0]) + '"' + ext + ">" + esc(b[1]) + "</a>";
   }).join("");
 
-  /* ---------- Reel de la portada ---------- */
+  /* ---------- Reel de la portada y biblioteca de videos ---------- */
   var reel = (D.reel || []).filter(function (r) { return r && r.src; });
-  var reelIdx = 0, reelTimer = null;
+  var portada = reel.slice(0, 5);               // la portada muestra los 5 primeros
+  var reelIdx = 0, reelTimer = null, visorIdx = 0, visorOrigen = null;
+  var filtroBib = "todos", bibObs = null;
   function esEmbed(src) { return /youtube\.com|youtu\.be|vimeo\.com/.test(src); }
   function embedAuto(src, sonido) {
     var sep = src.indexOf("?") < 0 ? "?" : "&";
     return src + sep + (sonido ? "autoplay=1" : "autoplay=1&mute=1&muted=1&loop=1&controls=0&background=1&playsinline=1");
   }
+  function medioMudo(r, i, auto) {
+    return esEmbed(r.src)
+      ? '<iframe src="' + esc(embedAuto(r.src)) + '" title="' + esc(r.titulo || "Video " + (i + 1)) + '" allow="autoplay; fullscreen" loading="lazy" tabindex="-1"></iframe>'
+      : '<video src="' + esc(r.src) + '"' + (r.poster ? ' poster="' + esc(r.poster) + '"' : "") + ' muted loop playsinline preload="metadata"' + (auto ? " autoplay" : "") + "></video>";
+  }
+  function reproducir(v) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+
   if (reel.length) {
     $("#inicio").classList.add("con-reel");
     $("#reel").hidden = false;
-    $("#reel-pila").innerHTML = reel.map(function (r, i) {
-      var medio = esEmbed(r.src)
-        ? '<iframe src="' + esc(embedAuto(r.src)) + '" title="' + esc(r.titulo || "Video " + (i + 1)) + '" allow="autoplay; fullscreen" loading="lazy" tabindex="-1"></iframe>'
-        : '<video src="' + esc(r.src) + '"' + (r.poster ? ' poster="' + esc(r.poster) + '"' : "") + ' muted loop playsinline preload="metadata"' + (i === 0 ? " autoplay" : "") + "></video>";
+    $("#reel-pila").innerHTML = portada.map(function (r, i) {
       return '<button class="reel-carta" type="button" data-i="' + i + '" aria-label="Ver ' + esc(r.titulo || "video " + (i + 1)) + ' con sonido">' +
-        medio + '<span class="reel-brillo"></span>' +
+        medioMudo(r, i, i === 0) + '<span class="reel-brillo"></span>' +
         (r.titulo ? '<span class="reel-nombre">' + esc(r.titulo) + "</span>" : "") +
         '<span class="reel-play" aria-hidden="true"></span></button>';
     }).join("");
-    $("#reel-puntos").innerHTML = reel.length > 1 ? reel.map(function (_, i) {
+    $("#reel-puntos").innerHTML = portada.length > 1 ? portada.map(function (_, i) {
       return '<button type="button" data-ir-reel="' + i + '" aria-label="Video ' + (i + 1) + '"></button>';
     }).join("") : "";
     colocarReel();
@@ -230,19 +236,21 @@
       if (!c) return;
       var i = +c.dataset.i;
       if (i !== reelIdx) { reelIdx = i; colocarReel(); programarReel(); }
-      else abrirVisor(i);
+      else abrirVisor(i, c);
     });
     $("#reel").addEventListener("pointerenter", function () { clearInterval(reelTimer); });
     $("#reel").addEventListener("pointerleave", programarReel);
+
+    if (reel.length > 1) pintarBiblioteca();   // con un solo video basta la portada
   }
   function programarReel() {
     clearInterval(reelTimer);
-    if (reel.length > 1 && !reducido) reelTimer = setInterval(function () {
-      reelIdx = (reelIdx + 1) % reel.length; colocarReel();
+    if (portada.length > 1 && !reducido) reelTimer = setInterval(function () {
+      reelIdx = (reelIdx + 1) % portada.length; colocarReel();
     }, 7000);
   }
   function colocarReel() {
-    var n = reel.length;
+    var n = portada.length;
     $$(".reel-carta").forEach(function (c, i) {
       var d = (i - reelIdx + n) % n;            // 0 = al frente
       if (d > n / 2) d -= n;                    // reparte a ambos lados
@@ -251,23 +259,71 @@
       c.classList.toggle("activa", d === 0);
       c.tabIndex = d === 0 ? 0 : -1;
       var v = c.querySelector("video");
-      if (v) { if (d === 0 && !reducido) { var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); } else v.pause(); }
+      if (v) { if (d === 0 && !reducido) reproducir(v); else v.pause(); }
     });
     $$("[data-ir-reel]").forEach(function (b, i) { b.setAttribute("aria-current", i === reelIdx); });
   }
 
+  /* Biblioteca: todos los videos en cuadrícula, con filtro si tienen etiqueta. */
+  function pintarBiblioteca() {
+    $("#biblioteca").hidden = false;
+    $("#nav-biblioteca").hidden = false;
+    var etiquetas = [];
+    reel.forEach(function (r) { if (r.etiqueta && etiquetas.indexOf(r.etiqueta) < 0) etiquetas.push(r.etiqueta); });
+    $("#bib-filtros").innerHTML = etiquetas.length > 1 ? ["todos"].concat(etiquetas).map(function (t) {
+      return '<button class="filtro" type="button" data-bib="' + esc(t) + '" aria-pressed="' + (t === filtroBib) + '">' +
+        (t === "todos" ? "Todos" : esc(t)) + "</button>";
+    }).join("") : "";
+    $("#bib-rejilla").innerHTML = reel.map(function (r, i) {
+      if (filtroBib !== "todos" && r.etiqueta !== filtroBib) return "";
+      return '<button class="bib-item" type="button" data-v="' + i + '" style="animation-delay:' + i * 60 + 'ms" aria-label="Ver ' + esc(r.titulo || "video " + (i + 1)) + ' con sonido">' +
+        medioMudo(r, i, false) + '<span class="reel-brillo"></span>' +
+        (r.etiqueta ? '<span class="bib-etiqueta">' + esc(r.etiqueta) + "</span>" : "") +
+        (r.titulo ? '<span class="reel-nombre">' + esc(r.titulo) + "</span>" : "") +
+        '<span class="reel-play" aria-hidden="true"></span></button>';
+    }).join("");
+    $("#bib-total").textContent = reel.length + (reel.length === 1 ? " video" : " videos");
+    activarBiblioteca();
+  }
+  // Cada video de la biblioteca se reproduce (sin sonido) solo mientras está a la vista.
+  function activarBiblioteca() {
+    if (!("IntersectionObserver" in window)) return;
+    if (!bibObs) bibObs = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        var v = en.target.querySelector("video");
+        if (!v) return;
+        if (en.isIntersecting && !reducido && $("#visor").hidden) reproducir(v); else v.pause();
+      });
+    }, { threshold: .6 });
+    bibObs.disconnect();
+    $$(".bib-item").forEach(function (el) { bibObs.observe(el); });
+  }
+  if ($("#biblioteca")) {
+    $("#biblioteca").addEventListener("click", function (e) {
+      var f = e.target.closest("[data-bib]");
+      if (f) { filtroBib = f.dataset.bib; pintarBiblioteca(); return; }
+      var it = e.target.closest(".bib-item");
+      if (it) abrirVisor(+it.dataset.v, it);
+    });
+  }
+
   var visor = $("#visor");
-  function abrirVisor(i) {
+  function abrirVisor(i, desde) {
     var r = reel[i];
+    visorIdx = i;
+    if (desde) visorOrigen = desde;
     clearInterval(reelTimer);
-    $$(".reel-carta video").forEach(function (v) { v.pause(); });
+    $$(".reel-carta video, .bib-item video").forEach(function (v) { v.pause(); });
     $("#visor-medio").innerHTML = esEmbed(r.src)
       ? '<iframe src="' + esc(embedAuto(r.src, true)) + '" title="' + esc(r.titulo || "Video") + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>'
       : '<video src="' + esc(r.src) + '" controls autoplay playsinline></video>';
-    $("#visor-titulo").textContent = r.titulo || "";
-    visor.hidden = false;
-    document.body.classList.add("sin-scroll");
-    $(".visor-caja .modal-cerrar").focus();
+    $("#visor-titulo").textContent = (r.titulo || "") + (reel.length > 1 ? "  ·  " + (i + 1) + " / " + reel.length : "");
+    $$(".visor-flecha").forEach(function (b) { b.hidden = reel.length < 2; });
+    if (visor.hidden) {
+      visor.hidden = false;
+      document.body.classList.add("sin-scroll");
+      $(".visor-caja .modal-cerrar").focus();
+    }
   }
   function cerrarVisor() {
     if (visor.hidden) return;
@@ -275,10 +331,20 @@
     visor.hidden = true;
     document.body.classList.remove("sin-scroll");
     colocarReel(); programarReel();
-    var c = $(".reel-carta.activa"); if (c) c.focus({ preventScroll: true });
+    if (visorOrigen) visorOrigen.focus({ preventScroll: true });
   }
-  visor.addEventListener("click", function (e) { if (e.target.closest("[data-cerrar-visor]")) cerrarVisor(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrarVisor(); });
+  function moverVisor(d) { abrirVisor((visorIdx + d + reel.length) % reel.length); }
+  visor.addEventListener("click", function (e) {
+    if (e.target.closest("[data-cerrar-visor]")) return cerrarVisor();
+    var f = e.target.closest("[data-visor]");
+    if (f) moverVisor(+f.dataset.visor);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (visor.hidden) return;
+    if (e.key === "Escape") cerrarVisor();
+    else if (e.key === "ArrowRight") moverVisor(1);
+    else if (e.key === "ArrowLeft") moverVisor(-1);
+  });
 
   /* ---------- Modal de proyecto ---------- */
   var modal = $("#modal"), caja = $(".modal-caja"), origen = null, actual = null, mediaIdx = 0;

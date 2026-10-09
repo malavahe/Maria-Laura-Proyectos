@@ -11,8 +11,11 @@
  *   sin sonido, y al hacer clic se abren grandes con sonido.
  *   Guarda los videos en img/reel/ (formato .mp4, vertical 9:16 idealmente,
  *   menos de 20 MB cada uno) y agrégalos así:
- *     { src: "img/reel/campana-1.mp4", poster: "img/reel/campana-1.jpg", titulo: "Campaña Lila Vela" }
+ *     { src: "img/reel/campana-1.mp4", poster: "img/reel/campana-1.jpg", titulo: "Campaña Lila Vela", etiqueta: "Moda" }
  *   poster es opcional: una foto que se ve mientras el video carga.
+ *   etiqueta es opcional: si hay dos o más distintas, la biblioteca muestra
+ *   botones para filtrar por etiqueta.
+ *   La portada muestra los 5 primeros; la sección Biblioteca muestra todos.
  *   Si la lista está vacía, la portada muestra solo las figuras 3D.
  *
  * CATEGORÍAS
@@ -48,7 +51,7 @@ window.ML_DATA = {
   },
 
   reel: [
-    { src: "img/reel/reel-1.mp4", poster: "img/reel/reel-1.jpg", titulo: "Boceto al atardecer" }
+    { src: "img/reel/reel-1.mp4", poster: "img/reel/reel-1.jpg", titulo: "Boceto al atardecer", etiqueta: "Moda" }
   ],
 
   categorias: [

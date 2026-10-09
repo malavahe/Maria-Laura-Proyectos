@@ -23,7 +23,9 @@ reel: [
 ]
 ```
 
-Se reproducen solos y sin sonido al lado del nombre; al hacer clic se abren con sonido.
+Los 5 primeros se ven en la portada, al lado del nombre. Con dos o más videos aparece además
+la sección **Biblioteca**, con todos en cuadrícula y filtros por `etiqueta`. Se reproducen
+solos y sin sonido; al hacer clic se abren con sonido y se puede pasar al siguiente.
 También acepta enlaces de YouTube o Vimeo en `src` (formato embed).
 
 ## Agregar fotos o videos a un proyecto
