@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>María Laura · Automatización con IA</title>
+  <meta name="description" content="María Laura, especialista en automatización de procesos empresariales con inteligencia artificial. Agentes de IA, automatización, contenido y video con IA.">
+  <meta name="theme-color" content="#F2619C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="top" id="top">
+    <a class="marca" href="#inicio" aria-label="María Laura, inicio">
+      <span class="marca-sello" aria-hidden="true">ML</span>
+      <span class="marca-nombre">María Laura</span>
+    </a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#capacidades">Capacidades</a>
+      <a href="#metodo">Método</a>
+      <a class="menu-cta" href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <canvas id="escena" class="hero-escena" aria-hidden="true"></canvas>
+      <div class="hero-fallback" aria-hidden="true">
+        <span class="orbe orbe-1"></span><span class="orbe orbe-2"></span>
+        <span class="orbe orbe-3"></span><span class="orbe orbe-4"></span>
+      </div>
+      <div class="hero-texto">
+        <p class="eyebrow"><span class="punto"></span> Portafolio</p>
+        <h1 id="hero-nombre">María Laura</h1>
+        <p class="hero-rol" id="hero-rol"></p>
+        <p class="hero-lead" id="hero-lema"></p>
+        <div class="hero-acciones">
+          <a class="btn" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn-vidrio" href="#contacto">Hablemos</a>
+        </div>
+        <dl class="hero-cifras" id="hero-cifras"></dl>
+      </div>
+      <a class="hero-scroll" href="#proyectos" aria-label="Bajar a proyectos"><span></span></a>
+    </section>
+
+    <div class="cinta" aria-hidden="true">
+      <div class="cinta-pista" id="cinta"></div>
+    </div>
+
+    <section id="proyectos" class="seccion">
+      <div class="seccion-cabeza">
+        <p class="eyebrow">Trabajo</p>
+        <h2>Proyectos</h2>
+        <p class="seccion-lead">Elige una categoría y abre cada proyecto para ver qué se hizo, cómo y con qué habilidades.</p>
+      </div>
+      <div class="filtros" id="filtros" role="tablist" aria-label="Categorías"></div>
+      <div class="rejilla" id="rejilla"></div>
+    </section>
+
+    <section id="clientes" class="seccion seccion-clientes">
+      <div class="seccion-cabeza">
+        <p class="eyebrow">Con quién</p>
+        <h2>Clientes</h2>
+      </div>
+      <div class="clientes" id="clientes-lista"></div>
+    </section>
+
+    <section id="capacidades" class="seccion">
+      <div class="seccion-cabeza">
+        <p class="eyebrow">Qué hago</p>
+        <h2>Capacidades</h2>
+        <p class="seccion-lead">Gira cada tarjeta para ver qué incluye.</p>
+      </div>
+      <div class="capacidades">
+        <button class="cap" type="button" data-color="rosa">
+          <span class="cap-cara cap-frente">
+            <span class="cap-num">01</span>
+            <span class="cap-titulo">Agentes de IA para atención</span>
+            <span class="cap-gira">Ver más</span>
+          </span>
+          <span class="cap-cara cap-reverso">
+            <span class="cap-titulo">Agentes de IA para atención</span>
+            <span class="cap-texto">Asistentes que responden en WhatsApp, Instagram y Facebook, resuelven las dudas frecuentes y pasan a una persona cuando hace falta.</span>
+          </span>
+        </button>
+        <button class="cap" type="button" data-color="lila">
+          <span class="cap-cara cap-frente">
+            <span class="cap-num">02</span>
+            <span class="cap-titulo">Automatización de procesos</span>
+            <span class="cap-gira">Ver más</span>
+          </span>
+          <span class="cap-cara cap-reverso">
+            <span class="cap-titulo">Automatización de procesos</span>
+            <span class="cap-texto">Levanto cómo funciona hoy la empresa, encuentro las tareas que se repiten y las convierto en flujos que corren solos.</span>
+          </span>
+        </button>
+        <button class="cap" type="button" data-color="azul">
+          <span class="cap-cara cap-frente">
+            <span class="cap-num">03</span>
+            <span class="cap-titulo">Agentes programados</span>
+            <span class="cap-gira">Ver más</span>
+          </span>
+          <span class="cap-cara cap-reverso">
+            <span class="cap-titulo">Agentes programados</span>
+            <span class="cap-texto">Agentes que trabajan en días y horas fijos: análisis de tendencias, calendarios de eventos, reportes listos para leer.</span>
+          </span>
+        </button>
+        <button class="cap" type="button" data-color="limon">
+          <span class="cap-cara cap-frente">
+            <span class="cap-num">04</span>
+            <span class="cap-titulo">Contenido y video con IA</span>
+            <span class="cap-gira">Ver más</span>
+          </span>
+          <span class="cap-cara cap-reverso">
+            <span class="cap-titulo">Contenido y video con IA</span>
+            <span class="cap-texto">Shootings, piezas para redes y videos de estética cinematográfica o educativa, producidos con inteligencia artificial.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section id="metodo" class="seccion">
+      <div class="seccion-cabeza">
+        <p class="eyebrow">Cómo trabajo</p>
+        <h2>Método</h2>
+      </div>
+      <ol class="metodo">
+        <li><span class="metodo-paso">1</span><h3>Entender</h3><p>Converso con el equipo y documento cómo funciona hoy el proceso, paso por paso.</p></li>
+        <li><span class="metodo-paso">2</span><h3>Diseñar</h3><p>Defino qué hace la IA, qué hace una persona y dónde se conectan.</p></li>
+        <li><span class="metodo-paso">3</span><h3>Construir</h3><p>Monto agentes, flujos y piezas, y los pruebo con casos reales.</p></li>
+        <li><span class="metodo-paso">4</span><h3>Entregar</h3><p>Capacito al equipo y ajusto con el uso diario.</p></li>
+      </ol>
+    </section>
+
+    <section id="contacto" class="seccion contacto">
+      <div class="contacto-caja">
+        <p class="eyebrow">Contacto</p>
+        <h2>¿Tienes un proceso que se repite todos los días?</h2>
+        <p class="seccion-lead">Cuéntame cuál es y vemos qué parte puede hacer la inteligencia artificial.</p>
+        <div class="contacto-botones" id="contacto-botones"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <span>© <span id="anio"></span> María Laura</span>
+    <a href="#inicio">Volver arriba</a>
+  </footer>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-fondo" data-cerrar></div>
+    <article class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" tabindex="-1">
+      <button class="modal-cerrar" type="button" data-cerrar aria-label="Cerrar">×</button>
+      <div class="modal-galeria" id="modal-galeria"></div>
+      <div class="modal-cuerpo" id="modal-cuerpo"></div>
+    </article>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="js/escena.js" defer></script>
+</body>
+</html>

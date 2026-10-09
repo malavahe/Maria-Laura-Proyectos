@@ -1,0 +1,15 @@
+# Sitio estático: se publica esta carpeta tal cual, sin paso de compilación.
+# Si conectas el repositorio desde Netlify, usa "portafolio" como Base directory.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
