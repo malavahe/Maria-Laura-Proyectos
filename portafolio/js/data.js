@@ -47,7 +47,9 @@ window.ML_DATA = {
     }
   },
 
-  reel: [],
+  reel: [
+    { src: "img/reel/reel-1.mp4", poster: "img/reel/reel-1.jpg", titulo: "Boceto al atardecer" }
+  ],
 
   categorias: [
     { id: "automatizacion", nombre: "Automatización con IA", color: "rosa" },
