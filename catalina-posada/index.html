@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catalina Posada · diseñadora</title>
-  <meta name="description" content="Catalina Posada, diseñadora. Telas tejidas en telar: archivo textil, showroom y propuestas privadas.">
+  <meta name="description" content="Catalina Posada, diseñadora. Telas tejidas en telar: archivo textil con cada tela en vista normal y macro.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -20,8 +20,6 @@
     </a>
     <nav class="menu" aria-label="Secciones">
       <a href="#archivo">Archivo Textil</a>
-      <a href="#showroom">Showroom</a>
-      <a href="#propuestas">Propuestas Privadas</a>
     </nav>
   </header>
 
@@ -34,53 +32,22 @@
         <p class="hero-lead">Telas hechas hilo por hilo, para diseñadoras que quieren crear con ellas.</p>
         <div class="hero-acciones">
           <a class="btn" href="#archivo">Ver Archivo Textil</a>
-          <a class="btn btn-linea" href="#showroom">Entrar al Showroom</a>
         </div>
       </div>
       <div class="hero-tela" aria-hidden="true"></div>
     </section>
 
-    <div class="aviso" id="aviso-muestra" hidden>
-      Las telas que ves son de muestra. Se reemplazarán por el inventario real.
-    </div>
 
     <section id="archivo" class="seccion">
       <div class="seccion-cabecera revelar">
-        <p class="eyebrow">01</p>
         <h2>Archivo Textil</h2>
-        <p class="seccion-intro">El inventario de telas disponibles. Selecciona una para ver su ficha y probarla en el showroom.</p>
+        <p class="seccion-intro">El inventario de telas disponibles. Selecciona una para verla en vista normal y en macro.</p>
       </div>
       <div class="filtros" role="group" aria-label="Filtrar telas" id="filtros"></div>
       <ul class="grid-telas" id="grid-telas"></ul>
     </section>
 
-    <section id="showroom" class="seccion showroom">
-      <div class="seccion-cabecera revelar">
-        <p class="eyebrow">02</p>
-        <h2>Showroom</h2>
-        <p class="seccion-intro">Elige una prenda y una tela del archivo. La prenda cambia a la tela que selecciones.</p>
-      </div>
-      <div class="sala">
-        <div class="sala-prendas" role="tablist" aria-label="Prendas" id="sala-prendas"></div>
-        <figure class="sala-escenario">
-          <div class="escenario" id="escenario"></div>
-          <figcaption id="escenario-pie"></figcaption>
-        </figure>
-        <div class="sala-telas">
-          <p class="sala-titulo">Telas</p>
-          <div class="muestrario" role="radiogroup" aria-label="Telas" id="muestrario"></div>
-        </div>
-      </div>
-    </section>
 
-    <section id="propuestas" class="seccion propuestas">
-      <div class="seccion-cabecera revelar">
-        <p class="eyebrow">03</p>
-        <h2>Propuestas Privadas</h2>
-        <p class="seccion-intro">Colecciones desarrolladas a medida, a partir del archivo textil, para diseñadoras invitadas.</p>
-      </div>
-      <div class="grid-propuestas" id="grid-propuestas"></div>
-    </section>
   </main>
 
   <footer class="pie">
@@ -98,13 +65,11 @@
       <p class="eyebrow" id="ficha-ref"></p>
       <h3 id="ficha-nombre"></h3>
       <dl id="ficha-lista"></dl>
-      <button class="btn" type="button" id="ficha-probar">Probar en el showroom</button>
     </div>
   </dialog>
 
   <script src="js/data.js"></script>
   <script src="js/textures.js"></script>
-  <script src="js/garments.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

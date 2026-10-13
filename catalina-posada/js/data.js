@@ -1,27 +1,19 @@
 /*
- * Contenido de la web. Para actualizar el inventario o el showroom
- * solo hay que editar este archivo.
+ * Contenido de la web. Para actualizar el inventario solo hay que editar
+ * este archivo.
  *
  * TELAS
- *   pieza:   foto general de la muestra completa (opcional).
- *   foto:    foto de cerca, donde se ve la textura (img/telas/...). Si está
+ *   pieza:   vista normal: foto general de la muestra completa (opcional).
+ *   foto:    vista macro: foto de cerca, donde se ve la textura. Si está
  *            vacía, la web genera una textura de muestra a partir de "tejido".
- *   mosaico: versión repetible (cuadrada, en espejo) de la foto, para
- *            rellenar las prendas del showroom sin cortes visibles.
+ *   mosaico: versión repetible de la foto macro, para el fondo de la portada.
  *   ligamento: técnica. Opcional; si está vacía no se muestra.
  *   paleta:  colores principales de la tela, para la ficha.
  *   tejido:  textura de muestra mientras no haya foto.
  *            tipo: liso | sarga | espiga | rayas | cuadros | pata | boucle
- *
- * SHOWROOM
- *   renders: imágenes pregeneradas (por ejemplo con Nano Banana) de cada
- *            prenda hecha con cada tela. Clave "prenda:tela".
- *            Si no existe la combinación, la web pinta la tela sobre la
- *            silueta de la prenda en vivo.
  */
 
 window.CP_DATA = {
-  muestra: false, // true muestra el aviso de "telas de muestra"
   portada: "cinturon-de-monje", // tela que se ve en la portada
 
   telas: [
@@ -311,22 +303,5 @@ window.CP_DATA = {
     { id: "lisas", nombre: "Lisas" },
     { id: "rayas-cuadros", nombre: "Rayas y cuadros" },
     { id: "texturas", nombre: "Texturas" }
-  ],
-
-  prendas: [
-    { id: "chaqueta-telar", nombre: "Chaqueta de telar" }
-  ],
-
-  renders: {
-    // "chaqueta:arena": "img/showroom/chaqueta-arena.jpg"
-  },
-
-  propuestas: [
-    {
-      titulo: "Colección Home",
-      para: "Diseñadora invitada",
-      estado: "En desarrollo",
-      piezas: ["Sofás", "Cojines", "Cubrecamas", "Cortinas", "Mantas"]
-    }
   ]
 };
